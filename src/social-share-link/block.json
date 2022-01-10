@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "outermost/social-share-link",
+	"title": "Social Share Link",
+	"category": "widgets",
+    "parent": [ "outermost/social-share-links" ],
+	"description": "TODO",
+	"textdomain": "TODO",
+    "attributes": {
+        "url": {
+            "type": "string"
+        },
+        "service": {
+            "type": "string"
+        },
+        "label": {
+            "type": "string"
+        }
+    },
+    "usesContext": [
+		"openInNewTab",
+		"iconColorValue",
+		"iconBackgroundColorValue"
+	],
+    "supports": {
+		"reusable": false,
+		"html": false
+	},
+	"editorStyle": "file:./../../build/editor.css"
+}

@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "outermost/social-share-links",
+	"title": "Social Share",
+	"category": "widgets",
+	"description": "Add social share icons.",
+	"keywords": [ "icon", "social", "links", "share" ],
+	"textdomain": "the-social-share-block",
+	"attributes": {
+		"iconColor": {
+			"type": "string"
+		},
+		"customIconColor": {
+			"type": "string"
+		},
+		"iconColorValue": {
+			"type": "string"
+		},
+		"iconBackgroundColor": {
+			"type": "string"
+		},
+		"customIconBackgroundColor": {
+			"type": "string"
+		},
+		"iconBackgroundColorValue": {
+			"type": "string"
+		},
+		"size": {
+			"type": "string"
+		}
+	},
+	"providesContext": {
+		"openInNewTab": "openInNewTab",
+		"iconColorValue": "iconColorValue",
+		"iconBackgroundColorValue": "iconBackgroundColorValue"
+	},
+	"supports": {
+		"align": [ "left", "center", "right" ],
+		"anchor": true,
+		"__experimentalExposeControlsToChildren": true,
+		"__experimentalLayout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"default": {
+				"type": "flex"
+			}
+		},
+		"spacing": {
+			"blockGap": true,
+			"margin": [ "top", "bottom" ],
+			"units": [ "px", "em", "rem", "vh", "vw" ],
+			"__experimentalDefaultControls": {
+				"blockGap": true
+			}
+		}
+	},
+	"styles": [
+		{ "name": "default", "label": "Default", "isDefault": true },
+		{ "name": "logos-only", "label": "Logos Only" },
+		{ "name": "pill-shape", "label": "Pill Shape" }
+	],
+	"editorStyle": "file:./../../build/editor.css",
+	"style": "file:./../../build/style-style.css"
+}

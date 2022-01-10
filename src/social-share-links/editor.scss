@@ -1,0 +1,93 @@
+// Prevent toolbar from jumping when selecting / hovering a link.
+.outermost-social-share-link:hover {
+	transform: none;
+}
+
+.editor-styles-wrapper .wp-block-outermost-social-share-links {
+	padding: 0;
+}
+
+// Placeholder/setup state.
+.wp-block-outermost-social-share-links__social-placeholder {
+	display: flex;
+	opacity: 0.8;
+	list-style: none;
+
+	// Use the first link to set the height.
+	> .outermost-social-share-link {
+		// Use !important to keep the selector simple.
+		padding-left: 0 !important;
+		margin-left: 0 !important;
+		padding-right: 0 !important;
+		margin-right: 0 !important;
+		width: 0 !important;
+		visibility: hidden;
+	}
+
+	// Wrap the remaining placeholders in a container so the plus can overlap.
+	> .wp-block-outermost-social-share-links__social-placeholder-icons {
+		display: flex;
+	}
+
+	.outermost-social-share-link {
+		padding: 0.25em;
+
+		.is-style-pill-shape & {
+			padding-left: calc((2/3) * 1em);
+			padding-right: calc((2/3) * 1em);
+		}
+
+		.is-style-logos-only & {
+			padding: 0;
+		}
+	}
+
+	.outermost-social-share-link::before {
+		content: "";
+		display: block;
+		width: 1em;
+		height: 1em;
+	//	border-radius: $radius-round;
+
+		.is-style-logos-only & {
+			background: currentColor;
+		}
+	}
+}
+
+// Selected placeholder state.
+.wp-block-outermost-social-share-links .wp-block-outermost-social-share-links__social-prompt {
+    cursor: default;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    list-style: none;
+	margin-top: auto;
+	margin-bottom: auto;
+    min-height: 24px;
+    order: 2;
+    padding-right: 8px;
+}
+
+// Center flex items. This has an equivalent in style.scss.
+.wp-block[data-align="center"] > .wp-block-outermost-social-share-links {
+	justify-content: center;
+}
+
+// Improve the preview, ensure buttons are fully opaque despite being disabled.
+// @todo: Look at improving the preview component to make this unnecessary.
+.block-editor-block-preview__content .components-button:disabled {
+	opacity: 1;
+}
+
+// Unconfigured placeholder links are semitransparent.
+.outermost-social-share-link.outermost-social-share-link__is-incomplete {
+	opacity: 0.5;
+//	@include reduce-motion("transition");
+}
+
+.wp-block-outermost-social-share-links .is-selected .outermost-social-share-link__is-incomplete,
+.outermost-social-share-link.outermost-social-share-link__is-incomplete:hover,
+.outermost-social-share-link.outermost-social-share-link__is-incomplete:focus {
+	opacity: 1;
+}

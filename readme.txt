@@ -1,22 +1,36 @@
 === The Social Share Block ===
 Contributors:      ndiego, outermostdesign
-Tags:              icon, icon block, SVG, SVG block, block
+Tags:              social, share, social icon, social share, block
 Requires at least: 5.8
-Tested up to:      5.8
+Tested up to:      5.9
 Requires PHP:      7.0
 Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Effortlessly add an SVG icon or graphic to your website or choose one from the WordPress icon library.
+Effortlessly add an social share icons to your website.
 
 == Description ==
 
-A simple little block that allows you add a custom SVG icon or graphic to the Block Editor (Gutenberg).
+A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
 
-The plugin also includes the complete WordPress icon library with 270+ SVG icons to choose from!
+Share options include:
+
+* Facebook
+* Twitter
+* LinkedIn
+* Pinterest
+* Reddit
+* Email
+* Print
 
 === Key Features ===
+
+* Heavily inspired by the Social Icons block in WordPress core
+* Includes some handy controls (show/hide labels, size, colors, etc.)
+* No block library required 🎉
+* Built almost entirely with native WordPress components
+* Will get additional functionality as its added to WordPress core (margin, borders, responsive controls etc.)
 
 === Stay Connected ===
 
@@ -31,8 +45,6 @@ The plugin also includes the complete WordPress icon library with 270+ SVG icons
     * Open the block inserter within the Block Editor (Gutenberg) and search for "icon". The plugin should appear and allow you to it install directly. Skip steps 2 and 3.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Search for the block within the Block Editor (Gutenberg) and begin using.
-
-== Frequently Asked Questions ==
 
 == Screenshots ==
 

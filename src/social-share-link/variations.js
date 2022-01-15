@@ -1,8 +1,12 @@
 /**
+ * WordPress dependencies
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
  * Internal dependencies
  */
 import {
-	ChainIcon,
 	FacebookIcon,
 	LinkedInIcon,
 	MailIcon,
@@ -29,6 +33,7 @@ const variations = [
 		name: 'mail',
 		attributes: { service: 'mail' },
 		title: 'Mail',
+		label: __( 'Email this Page', 'the-social-share-block' ),
 		keywords: [ 'email', 'e-mail' ],
 		icon: MailIcon,
 	},
@@ -38,31 +43,32 @@ const variations = [
 		title: 'Pinterest',
 		icon: PinterestIcon,
 	},
-    {
-        name: 'print',
-        attributes: { service: 'print' },
-        title: 'Print',
-        icon: PrintIcon,
-    },
-    {
-        name: 'reddit',
-        attributes: { service: 'reddit' },
-        title: 'Reddit',
-        icon: RedditIcon,
-    },
 	{
-        isDefault: true,
+		name: 'print',
+		attributes: { service: 'print' },
+		title: 'Print',
+		label: __( 'Print this Page', 'the-social-share-block' ),
+		icon: PrintIcon,
+	},
+	{
+		name: 'reddit',
+		attributes: { service: 'reddit' },
+		title: 'Reddit',
+		icon: RedditIcon,
+	},
+	{
+		isDefault: true,
 		name: 'twitter',
 		attributes: { service: 'twitter' },
 		title: 'Twitter',
 		icon: TwitterIcon,
-	}
+	},
 ];
 
 /**
  * Add `isActive` function to all `social link` variations, if not defined.
  * `isActive` function is used to find a variation match from a created
- *  Block by providing its attributes.
+ * Block by providing its attributes.
  */
 variations.forEach( ( variation ) => {
 	if ( variation.isActive ) return;

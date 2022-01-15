@@ -44,7 +44,7 @@ const getDefaultBlockLayout = ( blockTypeOrName ) => {
 	return layoutBlockSupportConfig?.default;
 };
 
-export function SocialShareLinksEdit( props ) {
+export function SocialShareEdit( props ) {
 	const {
 		name,
 		attributes,
@@ -59,14 +59,16 @@ export function SocialShareLinksEdit( props ) {
 	const {
 		iconBackgroundColorValue,
 		iconColorValue,
-		size,
 		layout,
+		showLabels,
+		size,
 	} = attributes;
 	const usedLayout = layout || getDefaultBlockLayout( name );
 
 	// Remove icon background color if logos only style selected.
 	const logosOnly =
 		attributes.className?.indexOf( 'is-style-logos-only' ) >= 0;
+
 	useEffect( () => {
 		if ( logosOnly ) {
 			setAttributes( {
@@ -78,19 +80,18 @@ export function SocialShareLinksEdit( props ) {
 	}, [ logosOnly, setAttributes ] );
 
 	const SocialPlaceholder = (
-		<li className="wp-block-outermost-social-share-links__social-placeholder">
-			<div className="outermost-social-share-link"></div>
-			<div className="wp-block-outermost-social-share-links__social-placeholder-icons">
-				<div className="outermost-social-share-link outermost-social-share-link-twitter"></div>
+		<li className="wp-block-outermost-social-share__social-placeholder">
+			<div className="wp-block-outermost-social-share__social-placeholder-icons">
 				<div className="outermost-social-share-link outermost-social-share-link-facebook"></div>
+				<div className="outermost-social-share-link outermost-social-share-link-twitter"></div>
 				<div className="outermost-social-share-link outermost-social-share-link-linkedin"></div>
 			</div>
 		</li>
 	);
 
 	const SelectedSocialPlaceholder = (
-		<li className="wp-block-outermost-social-share-links__social-prompt">
-			{ __( 'Click plus to add' ) }
+		<li className="wp-block-outermost-social-share__social-prompt">
+			{ __( 'Click plus to add', 'the-social-share-block' ) }
 		</li>
 	);
 
@@ -115,12 +116,40 @@ export function SocialShareLinksEdit( props ) {
 		position: 'bottom right',
 	};
 
+	const colorSettings = [
+		{
+			// Use custom attribute as fallback to prevent loss of named color selection when
+			// switching themes to a new theme that does not have a matching named color.
+			value: iconColor.color || iconColorValue,
+			onChange: ( colorValue ) => {
+				setIconColor( colorValue );
+				setAttributes( { iconColorValue: colorValue } );
+			},
+			label: __( 'Icon color', 'the-social-share-block' ),
+		},
+	];
+
+	if ( ! logosOnly ) {
+		colorSettings.push( {
+			// Use custom attribute as fallback to prevent loss of named color selection when
+			// switching themes to a new theme that does not have a matching named color.
+			value: iconBackgroundColor.color || iconBackgroundColorValue,
+			onChange: ( colorValue ) => {
+				setIconBackgroundColor( colorValue );
+				setAttributes( {
+					iconBackgroundColorValue: colorValue,
+				} );
+			},
+			label: __( 'Icon background', 'the-social-share-block' ),
+		} );
+	}
+
 	return (
 		<Fragment>
 			<BlockControls group="other">
 				<ToolbarDropdownMenu
-					label={ __( 'Size' ) }
-					text={ __( 'Size' ) }
+					label={ __( 'Size', 'the-social-share-block' ) }
+					text={ __( 'Size', 'the-social-share-block' ) }
 					icon={ null }
 					popoverProps={ POPOVER_PROPS }
 				>
@@ -155,36 +184,22 @@ export function SocialShareLinksEdit( props ) {
 				</ToolbarDropdownMenu>
 			</BlockControls>
 			<InspectorControls>
+				<PanelBody
+					title={ __( 'Link settings', 'the-social-share-block' ) }
+				>
+					<ToggleControl
+						label={ __( 'Show labels', 'the-social-share-block' ) }
+						checked={ showLabels }
+						onChange={ () =>
+							setAttributes( { showLabels: ! showLabels } )
+						}
+					/>
+				</PanelBody>
 				<PanelColorSettings
 					__experimentalHasMultipleOrigins
 					__experimentalIsRenderedInSidebar
-					title={ __( 'Color' ) }
-					colorSettings={ [
-						{
-							// Use custom attribute as fallback to prevent loss of named color selection when
-							// switching themes to a new theme that does not have a matching named color.
-							value: iconColor.color || iconColorValue,
-							onChange: ( colorValue ) => {
-								setIconColor( colorValue );
-								setAttributes( { iconColorValue: colorValue } );
-							},
-							label: __( 'Icon color' ),
-						},
-						! logosOnly && {
-							// Use custom attribute as fallback to prevent loss of named color selection when
-							// switching themes to a new theme that does not have a matching named color.
-							value:
-								iconBackgroundColor.color ||
-								iconBackgroundColorValue,
-							onChange: ( colorValue ) => {
-								setIconBackgroundColor( colorValue );
-								setAttributes( {
-									iconBackgroundColorValue: colorValue,
-								} );
-							},
-							label: __( 'Icon background' ),
-						},
-					] }
+					title={ __( 'Color', 'the-social-share-block' ) }
+					colorSettings={ colorSettings }
 				/>
 				{ ! logosOnly && (
 					<ContrastChecker
@@ -206,4 +221,4 @@ const iconColorAttributes = {
 	iconBackgroundColor: 'icon-background-color',
 };
 
-export default withColors( iconColorAttributes )( SocialShareLinksEdit );
+export default withColors( iconColorAttributes )( SocialShareEdit );

@@ -6,13 +6,7 @@ import classNames from 'classnames';
 /**
  * WordPress dependencies
  */
-import {
-	InspectorControls,
-	URLPopover,
-	URLInput,
-	useBlockProps,
-} from '@wordpress/block-editor';
-import { Fragment, useState, useRef } from '@wordpress/element';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import {
 	Button,
 	PanelBody,
@@ -20,26 +14,23 @@ import {
 	TextControl,
 } from '@wordpress/components';
 import { __, sprintf } from '@wordpress/i18n';
-import { keyboardReturn } from '@wordpress/icons';
 
 /**
  * Internal dependencies
  */
-import { getIconBySite, getNameBySite } from './social-list';
+import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
 
-const SocialShareLinkEdit = ( {
-	attributes,
-	context,
-	isSelected,
-	setAttributes,
-} ) => {
+const SocialShareLinkEdit = ( { attributes, context, setAttributes } ) => {
 	const { service, label } = attributes;
-	const { iconColorValue, iconBackgroundColorValue } = context;
-	const classes = classNames( 'outermost-social-share-link', 'outermost-social-share-link-' + service );
+	const { showLabels, iconColorValue, iconBackgroundColorValue } = context;
+	const classes = classNames(
+		'outermost-social-share-link',
+		'outermost-social-share-link-' + service
+	);
 
-	const ref = useRef();
 	const IconComponent = getIconBySite( service );
 	const socialLinkName = getNameBySite( service );
+	const socialLikeLabel = label ? label : getLabelBySite( service );
 	const blockProps = useBlockProps( {
 		className: classes,
 		style: {
@@ -49,21 +40,25 @@ const SocialShareLinkEdit = ( {
 	} );
 
 	return (
-		<Fragment>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={ sprintf(
 						/* translators: %s: name of the social service. */
-						__( '%s share label' ),
+						__( '%s settings', 'the-social-share-block' ),
 						socialLinkName
 					) }
 					initialOpen={ false }
 				>
 					<PanelRow>
 						<TextControl
-							label={ __( 'Share label' ) }
+							label={ __(
+								'Share label',
+								'the-social-share-block'
+							) }
 							help={ __(
-								'Briefly describe the share link to help screen reader users.'
+								'Briefly describe the share link to help screen reader users.',
+								'the-social-share-block'
 							) }
 							value={ label }
 							onChange={ ( value ) =>
@@ -74,11 +69,12 @@ const SocialShareLinkEdit = ( {
 				</PanelBody>
 			</InspectorControls>
 			<li { ...blockProps }>
-                <Button>
-                    <IconComponent />
-                </Button>
+				<Button>
+					<IconComponent />
+					{ showLabels && <span>{ socialLikeLabel }</span> }
+				</Button>
 			</li>
-		</Fragment>
+		</>
 	);
 };
 

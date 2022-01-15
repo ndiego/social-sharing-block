@@ -1,4 +1,3 @@
-export * from './chain';
 export * from './facebook';
 export * from './linkedin';
 export * from './mail';

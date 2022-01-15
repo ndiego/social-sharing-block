@@ -7,7 +7,7 @@ import { registerBlockType } from '@wordpress/blocks';
  * Internal dependencies
  */
 import * as socialShareLink from './social-share-link';
-import * as socialShareLinks from './social-share-links';
+import * as socialShare from './social-share';
 
 /**
  * Function to register an individual block.
@@ -15,7 +15,6 @@ import * as socialShareLinks from './social-share-links';
  * @param {Object} block The block to be registered.
  */
 const registerBlock = ( block ) => {
-
 	if ( ! block ) {
 		return;
 	}
@@ -30,7 +29,7 @@ const registerBlock = ( block ) => {
  * @param {Array} blocks Array of blocks being registered.
  */
 const registerSocialShareBlocks = (
-	blocks = [ socialShareLink, socialShareLinks ]
+	blocks = [ socialShareLink, socialShare ]
 ) => {
 	blocks.forEach( registerBlock );
 };

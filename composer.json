@@ -1,0 +1,27 @@
+{
+	"name": "outermost/the-social-share-block",
+	"description": "A simple little block that allows you add social share icons to your website.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=7.0"
+	},
+	"config": {
+		"platform": {
+			"php": "7.0"
+		},
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.5",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "^2.1"
+	},
+	"scripts": {
+		"lint": "@php ./vendor/bin/phpcs",
+        "lint:fix": "@php ./vendor/bin/phpcbf"
+	}
+}

@@ -1,4 +1,6 @@
-.wp-block-outermost-social-share-links {
+.wp-block-outermost-social-share {
+	// Required for when social share icons are oriented vertically.
+	align-items: flex-start;
 	padding-left: 0;
 	padding-right: 0;
 	// Some themes set text-indent on all <ul>
@@ -24,6 +26,12 @@
 		svg {
 			width: 1em;
 			height: 1em;
+		}
+
+		span {
+			margin-left: 0.5em;
+		    margin-right: 0.5em;
+		    font-size: .65em;
 		}
 	}
 
@@ -65,13 +73,13 @@
 	display: block;
 	border-radius: 9999px; // This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized.
 	transition: transform 0.1s ease;
-	//@include reduce-motion("transition");
 
 	// Dimensions.
 	height: auto;
 
 	a {
-		display: block;
+		align-items: center;
+		display: flex;
 		line-height: 0;
 		transition: transform 0.1s ease;
 	}
@@ -82,7 +90,7 @@
 }
 
 // This needs specificity because themes usually override it with things like .widget-area a.
-.wp-block-outermost-social-share-links .wp-block-outermost-social-share-link .wp-block-outermost-social-share-link-anchor {
+.wp-block-outermost-social-share .wp-block-outermost-social-share-link .wp-block-outermost-social-share-link-anchor {
 	&,
 	&:hover,
 	&:active,
@@ -94,13 +102,13 @@
 }
 
 // Provide colors for a range of icons.
-.wp-block-outermost-social-share-links:not(.is-style-logos-only) {
+.wp-block-outermost-social-share:not(.is-style-logos-only) {
 	// Generic items such as mail, feed, etc.
 	@import "../social-share-link/socials-with-bg.scss";
 }
 
 // Treatment for logos only style.
-.wp-block-outermost-social-share-links.is-style-logos-only {
+.wp-block-outermost-social-share.is-style-logos-only {
 	.outermost-social-share-link {
 		background: none;
 
@@ -119,7 +127,7 @@
 }
 
 // Treatment for pill shape style.
-.wp-block-outermost-social-share-links.is-style-pill-shape {
+.wp-block-outermost-social-share.is-style-pill-shape {
 	.outermost-social-share-link {
 		width: auto;
 	}

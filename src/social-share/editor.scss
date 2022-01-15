@@ -3,12 +3,12 @@
 	transform: none;
 }
 
-.editor-styles-wrapper .wp-block-outermost-social-share-links {
+.editor-styles-wrapper .wp-block-outermost-social-share {
 	padding: 0;
 }
 
 // Placeholder/setup state.
-.wp-block-outermost-social-share-links__social-placeholder {
+.wp-block-outermost-social-share__social-placeholder {
 	display: flex;
 	opacity: 0.8;
 	list-style: none;
@@ -25,7 +25,7 @@
 	}
 
 	// Wrap the remaining placeholders in a container so the plus can overlap.
-	> .wp-block-outermost-social-share-links__social-placeholder-icons {
+	> .wp-block-outermost-social-share__social-placeholder-icons {
 		display: flex;
 	}
 
@@ -56,7 +56,7 @@
 }
 
 // Selected placeholder state.
-.wp-block-outermost-social-share-links .wp-block-outermost-social-share-links__social-prompt {
+.wp-block-outermost-social-share .wp-block-outermost-social-share__social-prompt {
     cursor: default;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
     font-size: 13px;
@@ -70,7 +70,7 @@
 }
 
 // Center flex items. This has an equivalent in style.scss.
-.wp-block[data-align="center"] > .wp-block-outermost-social-share-links {
+.wp-block[data-align="center"] > .wp-block-outermost-social-share {
 	justify-content: center;
 }
 
@@ -80,13 +80,7 @@
 	opacity: 1;
 }
 
-// Unconfigured placeholder links are semitransparent.
-.outermost-social-share-link.outermost-social-share-link__is-incomplete {
-	opacity: 0.5;
-//	@include reduce-motion("transition");
-}
-
-.wp-block-outermost-social-share-links .is-selected .outermost-social-share-link__is-incomplete,
+.wp-block-outermost-social-share .is-selected .outermost-social-share-link__is-incomplete,
 .outermost-social-share-link.outermost-social-share-link__is-incomplete:hover,
 .outermost-social-share-link.outermost-social-share-link__is-incomplete:focus {
 	opacity: 1;

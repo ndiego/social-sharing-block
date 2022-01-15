@@ -1,6 +1,6 @@
 // The editor uses the button component, the frontend uses a link.
 // Therefore we unstyle the button component to make it more like the frontend.
-.wp-block-outermost-social-share-links .outermost-social-share-link {
+.wp-block-outermost-social-share .outermost-social-share-link {
 	line-height: 0;
 
 	button {
@@ -14,11 +14,11 @@
 	}
 }
 
-.wp-block-outermost-social-share-links.is-style-pill-shape .outermost-social-share-link button {
+.wp-block-outermost-social-share.is-style-pill-shape .outermost-social-share-link button {
 	padding-left: calc((2/3) * 1em);
 	padding-right: calc((2/3) * 1em);
 }
 
-.wp-block-outermost-social-share-links.is-style-logos-only .outermost-social-share-link button {
+.wp-block-outermost-social-share.is-style-logos-only .outermost-social-share-link button {
 	padding: 0;
 }

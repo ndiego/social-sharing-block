@@ -4,7 +4,7 @@
 	"name": "outermost/social-sharing",
 	"title": "Social Sharing",
 	"category": "widgets",
-	"description": "Add social share icons.",
+	"description": "Display icons that share the current page when clicked.",
 	"keywords": [ "icon", "social", "links", "share" ],
 	"textdomain": "social-sharing",
 	"attributes": {

@@ -1,4 +1,4 @@
-=== The Social Share Block ===
+=== The Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
 Requires at least: 5.8
@@ -17,10 +17,14 @@ A simple little block that allows you add social share icons to the Block Editor
 Share options include:
 
 * Facebook
-* Twitter
 * LinkedIn
 * Pinterest
+* Pocket
 * Reddit
+* Skype
+* Tumblr
+* Twitter
+* WhatsApp
 * Email
 * Print
 
@@ -35,13 +39,13 @@ Share options include:
 === Stay Connected ===
 
 * [Follow on Twitter](https://twitter.com/nickmdiego)
-* [View on GitHub](https://github.com/ndiego/the-social-share-block)
+* [View on GitHub](https://github.com/ndiego/social-sharing-block)
 
 == Installation ==
 
 1. You have a couple options:
-	* Go to Plugins &rarr; Add New and search for "The Social Share Block". Once found, click "Install".
-	* Download the The Social Share Block from wordpress.org and make sure the folder us zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
+	* Go to Plugins &rarr; Add New and search for "The Social Sharing Block". Once found, click "Install".
+	* Download the The Social Sharing Block from wordpress.org and make sure the folder us zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
     * Open the block inserter within the Block Editor (Gutenberg) and search for "icon". The plugin should appear and allow you to it install directly. Skip steps 2 and 3.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Search for the block within the Block Editor (Gutenberg) and begin using.

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="plugin">
-	<description>Rules for The Social Share Block</description>
+	<description>Rules for The Social Sharing Block</description>
 
     <arg name="extensions" value="php" />
     <arg name="basepath" value="./" />

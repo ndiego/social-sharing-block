@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "outermost/social-share",
-	"title": "Social Share",
+	"name": "outermost/social-sharing",
+	"title": "Social Sharing",
 	"category": "widgets",
 	"description": "Add social share icons.",
 	"keywords": [ "icon", "social", "links", "share" ],
-	"textdomain": "the-social-share-block",
+	"textdomain": "social-sharing-block",
 	"attributes": {
 		"iconColor": {
 			"type": "string"

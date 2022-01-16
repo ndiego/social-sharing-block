@@ -11,9 +11,14 @@ import {
 	LinkedInIcon,
 	MailIcon,
 	PinterestIcon,
+	PocketIcon,
 	PrintIcon,
 	RedditIcon,
+	SkypeIcon,
+	TelegramIcon,
+	TumblrIcon,
 	TwitterIcon,
+	WhatsAppIcon,
 } from './icons';
 
 const variations = [
@@ -33,7 +38,7 @@ const variations = [
 		name: 'mail',
 		attributes: { service: 'mail' },
 		title: 'Mail',
-		label: __( 'Email this Page', 'the-social-share-block' ),
+		label: __( 'Email this Page', 'social-sharing-block' ),
 		keywords: [ 'email', 'e-mail' ],
 		icon: MailIcon,
 	},
@@ -44,10 +49,16 @@ const variations = [
 		icon: PinterestIcon,
 	},
 	{
+		name: 'pocket',
+		attributes: { service: 'pocket' },
+		title: 'Pocket',
+		icon: PocketIcon,
+	},
+	{
 		name: 'print',
 		attributes: { service: 'print' },
 		title: 'Print',
-		label: __( 'Print this Page', 'the-social-share-block' ),
+		label: __( 'Print this Page', 'social-sharing-block' ),
 		icon: PrintIcon,
 	},
 	{
@@ -57,11 +68,35 @@ const variations = [
 		icon: RedditIcon,
 	},
 	{
+		name: 'skype',
+		attributes: { service: 'skype' },
+		title: 'Skype',
+		icon: SkypeIcon,
+	},
+	{
+		name: 'telegram',
+		attributes: { service: 'telegram' },
+		title: 'Telegram',
+		icon: TelegramIcon,
+	},
+	{
+		name: 'tumblr',
+		attributes: { service: 'tumblr' },
+		title: 'Tumblr',
+		icon: TumblrIcon,
+	},
+	{
 		isDefault: true,
 		name: 'twitter',
 		attributes: { service: 'twitter' },
 		title: 'Twitter',
 		icon: TwitterIcon,
+	},
+	{
+		name: 'whatsapp',
+		attributes: { service: 'whatsapp' },
+		title: 'WhatsApp',
+		icon: WhatsAppIcon,
 	},
 ];
 

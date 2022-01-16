@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "outermost/social-share-link",
-	"title": "Social Share Link",
-    "parent": [ "outermost/social-share" ],
+	"name": "outermost/social-sharing-link",
+	"title": "Social Sharing Link",
+    "parent": [ "outermost/social-sharing" ],
 	"description": "Display an icon that shares the current page when clicked.",
-	"textdomain": "the-social-share-block",
+	"textdomain": "social-sharing-block",
     "attributes": {
         "service": {
             "type": "string"

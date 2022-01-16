@@ -20,12 +20,12 @@ import { __, sprintf } from '@wordpress/i18n';
  */
 import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
 
-const SocialShareLinkEdit = ( { attributes, context, setAttributes } ) => {
+const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 	const { service, label } = attributes;
 	const { showLabels, iconColorValue, iconBackgroundColorValue } = context;
 	const classes = classNames(
-		'outermost-social-share-link',
-		'outermost-social-share-link-' + service
+		'outermost-social-sharing-link',
+		'outermost-social-sharing-link-' + service
 	);
 
 	const IconComponent = getIconBySite( service );
@@ -45,7 +45,7 @@ const SocialShareLinkEdit = ( { attributes, context, setAttributes } ) => {
 				<PanelBody
 					title={ sprintf(
 						/* translators: %s: name of the social service. */
-						__( '%s settings', 'the-social-share-block' ),
+						__( '%s settings', 'social-sharing-block' ),
 						socialLinkName
 					) }
 					initialOpen={ false }
@@ -54,11 +54,11 @@ const SocialShareLinkEdit = ( { attributes, context, setAttributes } ) => {
 						<TextControl
 							label={ __(
 								'Share label',
-								'the-social-share-block'
+								'social-sharing-block'
 							) }
 							help={ __(
 								'Briefly describe the share link to help screen reader users.',
-								'the-social-share-block'
+								'social-sharing-block'
 							) }
 							value={ label }
 							onChange={ ( value ) =>

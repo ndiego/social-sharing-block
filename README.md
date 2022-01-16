@@ -1,16 +1,20 @@
-# The Social Share Block
+# The Social Sharing Block
 
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](https://github.com/ndiego/the-social-share-block/blob/master/LICENSE.txt)
 
 A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
 
-### Share Options
+### Sharing Options
 
 - Facebook
-- Twitter
 - LinkedIn
 - Pinterest
+- Pocket
 - Reddit
+- Skype
+- Tumblr
+- Twitter
+- WhatsApp
 - Email
 - Print
 
@@ -31,7 +35,7 @@ A simple little block that allows you add social share icons to the Block Editor
 
 1. Set up a local WordPress development environment.
 2. Clone / download this repository into the `wp-content/plugins` folder.
-3. Navigate to the `wp-content/plugins/the-social-share-block` folder in the command line.
+3. Navigate to the `wp-content/plugins/social-sharing-block` folder in the command line.
 4. Run `npm install` to install the plugin's dependencies within a `/node_modules/` folder.
 5. Run `composer install` to install the additional WordPress composer tools within a `/vendor/` folder.
 6. Run `npm run start` to compile and watch source files for changes while developing.

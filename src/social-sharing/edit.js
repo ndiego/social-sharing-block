@@ -27,13 +27,13 @@ import {
 import { __ } from '@wordpress/i18n';
 import { check } from '@wordpress/icons';
 
-const ALLOWED_BLOCKS = [ 'outermost/social-share-link' ];
+const ALLOWED_BLOCKS = [ 'outermost/social-sharing-link' ];
 
 const sizeOptions = [
-	{ name: __( 'Small' ), value: 'has-small-icon-size' },
-	{ name: __( 'Normal' ), value: 'has-normal-icon-size' },
-	{ name: __( 'Large' ), value: 'has-large-icon-size' },
-	{ name: __( 'Huge' ), value: 'has-huge-icon-size' },
+	{ name: __( 'Small', 'social-sharing-block' ), value: 'has-small-icon-size' },
+	{ name: __( 'Normal', 'social-sharing-block' ), value: 'has-normal-icon-size' },
+	{ name: __( 'Large', 'social-sharing-block' ), value: 'has-large-icon-size' },
+	{ name: __( 'Huge', 'social-sharing-block' ), value: 'has-huge-icon-size' },
 ];
 
 const getDefaultBlockLayout = ( blockTypeOrName ) => {
@@ -44,7 +44,7 @@ const getDefaultBlockLayout = ( blockTypeOrName ) => {
 	return layoutBlockSupportConfig?.default;
 };
 
-export function SocialShareEdit( props ) {
+export function SocialSharingEdit( props ) {
 	const {
 		name,
 		attributes,
@@ -80,18 +80,18 @@ export function SocialShareEdit( props ) {
 	}, [ logosOnly, setAttributes ] );
 
 	const SocialPlaceholder = (
-		<li className="wp-block-outermost-social-share__social-placeholder">
-			<div className="wp-block-outermost-social-share__social-placeholder-icons">
-				<div className="outermost-social-share-link outermost-social-share-link-facebook"></div>
-				<div className="outermost-social-share-link outermost-social-share-link-twitter"></div>
-				<div className="outermost-social-share-link outermost-social-share-link-linkedin"></div>
+		<li className="wp-block-outermost-social-sharing__social-placeholder">
+			<div className="wp-block-outermost-social-sharing__social-placeholder-icons">
+				<div className="outermost-social-sharing-link outermost-social-sharing-link-facebook"></div>
+				<div className="outermost-social-sharing-link outermost-social-sharing-link-twitter"></div>
+				<div className="outermost-social-sharing-link outermost-social-sharing-link-linkedin"></div>
 			</div>
 		</li>
 	);
 
 	const SelectedSocialPlaceholder = (
-		<li className="wp-block-outermost-social-share__social-prompt">
-			{ __( 'Click plus to add', 'the-social-share-block' ) }
+		<li className="wp-block-outermost-social-sharing__social-prompt">
+			{ __( 'Click plus to add', 'social-sharing-block' ) }
 		</li>
 	);
 
@@ -125,7 +125,7 @@ export function SocialShareEdit( props ) {
 				setIconColor( colorValue );
 				setAttributes( { iconColorValue: colorValue } );
 			},
-			label: __( 'Icon color', 'the-social-share-block' ),
+			label: __( 'Icon color', 'social-sharing-block' ),
 		},
 	];
 
@@ -140,7 +140,7 @@ export function SocialShareEdit( props ) {
 					iconBackgroundColorValue: colorValue,
 				} );
 			},
-			label: __( 'Icon background', 'the-social-share-block' ),
+			label: __( 'Icon background', 'social-sharing-block' ),
 		} );
 	}
 
@@ -148,8 +148,8 @@ export function SocialShareEdit( props ) {
 		<Fragment>
 			<BlockControls group="other">
 				<ToolbarDropdownMenu
-					label={ __( 'Size', 'the-social-share-block' ) }
-					text={ __( 'Size', 'the-social-share-block' ) }
+					label={ __( 'Size', 'social-sharing-block' ) }
+					text={ __( 'Size', 'social-sharing-block' ) }
 					icon={ null }
 					popoverProps={ POPOVER_PROPS }
 				>
@@ -185,10 +185,10 @@ export function SocialShareEdit( props ) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody
-					title={ __( 'Link settings', 'the-social-share-block' ) }
+					title={ __( 'Link settings', 'social-sharing-block' ) }
 				>
 					<ToggleControl
-						label={ __( 'Show labels', 'the-social-share-block' ) }
+						label={ __( 'Show labels', 'social-sharing-block' ) }
 						checked={ showLabels }
 						onChange={ () =>
 							setAttributes( { showLabels: ! showLabels } )
@@ -198,7 +198,7 @@ export function SocialShareEdit( props ) {
 				<PanelColorSettings
 					__experimentalHasMultipleOrigins
 					__experimentalIsRenderedInSidebar
-					title={ __( 'Color', 'the-social-share-block' ) }
+					title={ __( 'Color', 'social-sharing-block' ) }
 					colorSettings={ colorSettings }
 				/>
 				{ ! logosOnly && (
@@ -221,4 +221,4 @@ const iconColorAttributes = {
 	iconBackgroundColor: 'icon-background-color',
 };
 
-export default withColors( iconColorAttributes )( SocialShareEdit );
+export default withColors( iconColorAttributes )( SocialSharingEdit );

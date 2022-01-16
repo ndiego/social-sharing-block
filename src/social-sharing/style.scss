@@ -1,4 +1,4 @@
-.wp-block-outermost-social-share {
+.wp-block-outermost-social-sharing {
 	// Required for when social share icons are oriented vertically.
 	align-items: flex-start;
 	padding-left: 0;
@@ -9,14 +9,14 @@
 	margin-left: 0;
 
 	// Some themes add underlines, false underlines (via shadows), and borders to <a>.
-	.outermost-social-share-link a,
-	.outermost-social-share-link a:hover {
+	.outermost-social-sharing-link a,
+	.outermost-social-sharing-link a:hover {
 		text-decoration: none;
 		border-bottom: 0;
 		box-shadow: none;
 	}
 
-	.outermost-social-share-link {
+	.outermost-social-sharing-link {
 		// By setting the font size, we can scale icons and paddings consistently based on that.
 		// This also allows themes to override this, if need be.
 		a {
@@ -69,7 +69,7 @@
 	}
 }
 
-.wp-block-outermost-social-share-link {
+.wp-block-outermost-social-sharing-link {
 	display: block;
 	border-radius: 9999px; // This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized.
 	transition: transform 0.1s ease;
@@ -90,7 +90,7 @@
 }
 
 // This needs specificity because themes usually override it with things like .widget-area a.
-.wp-block-outermost-social-share .wp-block-outermost-social-share-link .wp-block-outermost-social-share-link-anchor {
+.wp-block-outermost-social-sharing .wp-block-outermost-social-sharing-link .wp-block-outermost-social-sharing-link-anchor {
 	&,
 	&:hover,
 	&:active,
@@ -102,14 +102,14 @@
 }
 
 // Provide colors for a range of icons.
-.wp-block-outermost-social-share:not(.is-style-logos-only) {
+.wp-block-outermost-social-sharing:not(.is-style-logos-only) {
 	// Generic items such as mail, feed, etc.
-	@import "../social-share-link/socials-with-bg.scss";
+	@import "../social-sharing-link/socials-with-bg.scss";
 }
 
 // Treatment for logos only style.
-.wp-block-outermost-social-share.is-style-logos-only {
-	.outermost-social-share-link {
+.wp-block-outermost-social-sharing.is-style-logos-only {
+	.outermost-social-sharing-link {
 		background: none;
 
 		a {
@@ -123,16 +123,16 @@
 		}
 	}
 
-	@import "../social-share-link/socials-without-bg.scss";
+	@import "../social-sharing-link/socials-without-bg.scss";
 }
 
 // Treatment for pill shape style.
-.wp-block-outermost-social-share.is-style-pill-shape {
-	.outermost-social-share-link {
+.wp-block-outermost-social-sharing.is-style-pill-shape {
+	.outermost-social-sharing-link {
 		width: auto;
 	}
 
-	.outermost-social-share-link a {
+	.outermost-social-sharing-link a {
 		padding-left: calc((2/3) * 1em);
 		padding-right: calc((2/3) * 1em);
 	}

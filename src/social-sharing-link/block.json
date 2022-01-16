@@ -5,7 +5,7 @@
 	"title": "Social Sharing Link",
     "parent": [ "outermost/social-sharing" ],
 	"description": "Display an icon that shares the current page when clicked.",
-	"textdomain": "social-sharing-block",
+	"textdomain": "social-sharing",
     "attributes": {
         "service": {
             "type": "string"

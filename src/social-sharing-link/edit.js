@@ -45,7 +45,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				<PanelBody
 					title={ sprintf(
 						/* translators: %s: name of the social service. */
-						__( '%s settings', 'social-sharing-block' ),
+						__( '%s settings', 'social-sharing' ),
 						socialLinkName
 					) }
 					initialOpen={ false }
@@ -54,11 +54,11 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 						<TextControl
 							label={ __(
 								'Share label',
-								'social-sharing-block'
+								'social-sharing'
 							) }
 							help={ __(
 								'Briefly describe the share link to help screen reader users.',
-								'social-sharing-block'
+								'social-sharing'
 							) }
 							value={ label }
 							onChange={ ( value ) =>

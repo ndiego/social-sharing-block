@@ -6,7 +6,7 @@
 	"category": "widgets",
 	"description": "Add social share icons.",
 	"keywords": [ "icon", "social", "links", "share" ],
-	"textdomain": "social-sharing-block",
+	"textdomain": "social-sharing",
 	"attributes": {
 		"iconColor": {
 			"type": "string"

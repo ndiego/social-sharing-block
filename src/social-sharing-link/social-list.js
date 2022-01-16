@@ -37,7 +37,7 @@ export const getNameBySite = ( name ) => {
 	const variation = find( variations, { name } );
 	return variation
 		? variation.title
-		: __( 'Email this Page', 'social-sharing-block' );
+		: __( 'Email this Page', 'social-sharing' );
 };
 
 /**
@@ -51,14 +51,14 @@ export const getLabelBySite = ( name ) => {
 	const variation = find( variations, { name } );
 
 	if ( ! variation ) {
-		return __( 'Mail', 'social-sharing-block' );
+		return __( 'Mail', 'social-sharing' );
 	}
 
 	const title =
-		variation?.title ?? __( 'Social Link', 'social-sharing-block' );
+		variation?.title ?? __( 'Social Link', 'social-sharing' );
 	const label =
 		variation?.label ??
 		/* translators: %s: title of the social service. */
-		sprintf( __( 'Share on %s', 'social-sharing-block' ), title );
+		sprintf( __( 'Share on %s', 'social-sharing' ), title );
 	return label;
 };

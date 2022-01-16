@@ -19,31 +19,31 @@
  * Behind the scenes, it also registers all assets so they can be enqueued
  * through the block editor in the corresponding context.
  */
-function outermost_social_share_block_init() {
-	register_block_type( __DIR__ . '/build/blocks/social-share' );
+function outermost_social_sharing_block_init() {
+	register_block_type( __DIR__ . '/build/blocks/social-sharing' );
 
 	// Load available translations.
-	wp_set_script_translations( 'outermost-social-share-block-scripts', 'social-sharing-block' );
+	wp_set_script_translations( 'outermost-social-sharing-block-scripts', 'social-sharing-block' );
 }
-add_action( 'init', 'outermost_social_share_block_init' );
+add_action( 'init', 'outermost_social_sharing_block_init' );
 
 /**
  * Enqueue plugin specific editor scripts.
  *
  * @since 0.1.0
  */
-function outermost_social_share_block_enqueue_editor_assets() {
+function outermost_social_sharing_block_enqueue_editor_assets() {
 	$asset_file = require_once dirname( __FILE__ ) . '/build/index.asset.php';
 
 	wp_enqueue_script(
-		'outermost-social-share-block-scripts',
+		'outermost-social-sharing-block-scripts',
 		plugin_dir_url( __FILE__ ) . 'build/index.js',
 		$asset_file['dependencies'],
 		$asset_file['version'],
 		false
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'outermost_social_share_block_enqueue_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'outermost_social_sharing_block_enqueue_editor_assets' );
 
 // The Social Share Links block is rendered server-side.
-require_once dirname( __FILE__ ) . '/build/blocks/social-share-link.php';
+require_once dirname( __FILE__ ) . '/build/blocks/social-sharing-link.php';

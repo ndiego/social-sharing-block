@@ -78,4 +78,4 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 	);
 };
 
-export default SocialShareLinkEdit;
+export default SocialSharingLinkEdit;

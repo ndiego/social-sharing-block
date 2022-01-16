@@ -18,15 +18,15 @@ export const settings = {
 	example: {
 		innerBlocks: [
 			{
-				name: 'outermost/social-share-link',
+				name: 'outermost/social-sharing-link',
 				attributes: { service: 'facebook' },
 			},
 			{
-				name: 'outermost/social-share-link',
+				name: 'outermost/social-sharing-link',
 				attributes: { service: 'twitter' },
 			},
 			{
-				name: 'outermost/social-share-link',
+				name: 'outermost/social-sharing-link',
 				attributes: { service: 'linkedin' },
 			},
 		],

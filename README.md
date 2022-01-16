@@ -1,6 +1,8 @@
-# Social Sharing Block
+# Social Sharing
 
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/social-share/blob/master/LICENSE.txt)
+
+![Social Sharing](https://github.com/ndiego/social-sharing/blob/main/.wordpress-org/banner-1544x500.png)
 
 A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
 

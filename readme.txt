@@ -8,7 +8,7 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Effortlessly add an social share icons to your website.
+Effortlessly add social share icons to your website.
 
 == Description ==
 
@@ -22,6 +22,7 @@ Share options include:
 * Pocket
 * Reddit
 * Skype
+* Telegram
 * Tumblr
 * Twitter
 * WhatsApp

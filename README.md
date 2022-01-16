@@ -1,6 +1,6 @@
 # The Social Sharing Block
 
-[![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](https://github.com/ndiego/the-social-share-block/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/the-social-share-block/blob/master/LICENSE.txt)
 
 A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
 
@@ -12,6 +12,7 @@ A simple little block that allows you add social share icons to the Block Editor
 - Pocket
 - Reddit
 - Skype
+- Telegram
 - Tumblr
 - Twitter
 - WhatsApp

@@ -54,8 +54,7 @@ export const getLabelBySite = ( name ) => {
 		return __( 'Mail', 'social-sharing' );
 	}
 
-	const title =
-		variation?.title ?? __( 'Social Link', 'social-sharing' );
+	const title = variation?.title ?? __( 'Social Link', 'social-sharing' );
 	const label =
 		variation?.label ??
 		/* translators: %s: title of the social service. */

@@ -184,9 +184,7 @@ export function SocialSharingEdit( props ) {
 				</ToolbarDropdownMenu>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody
-					title={ __( 'Link settings', 'social-sharing' ) }
-				>
+				<PanelBody title={ __( 'Link settings', 'social-sharing' ) }>
 					<ToggleControl
 						label={ __( 'Show labels', 'social-sharing' ) }
 						checked={ showLabels }

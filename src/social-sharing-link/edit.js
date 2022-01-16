@@ -52,10 +52,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				>
 					<PanelRow>
 						<TextControl
-							label={ __(
-								'Share label',
-								'social-sharing'
-							) }
+							label={ __( 'Share label', 'social-sharing' ) }
 							help={ __(
 								'Briefly describe the share link to help screen reader users.',
 								'social-sharing'

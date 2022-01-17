@@ -6,7 +6,7 @@
 
 **This plugin requires WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active.**
 
-A simple little block that allows you add social share icons to the Block Editor.
+A simple little block that allows you to add social share icons to the Block Editor.
 
 ### Sharing Options
 

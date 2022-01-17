@@ -30,10 +30,10 @@ import { check } from '@wordpress/icons';
 const ALLOWED_BLOCKS = [ 'outermost/social-sharing-link' ];
 
 const sizeOptions = [
-	{ name: __( 'Small', 'social-sharing' ), value: 'has-small-icon-size' },
-	{ name: __( 'Normal', 'social-sharing' ), value: 'has-normal-icon-size' },
-	{ name: __( 'Large', 'social-sharing' ), value: 'has-large-icon-size' },
-	{ name: __( 'Huge', 'social-sharing' ), value: 'has-huge-icon-size' },
+	{ name: __( 'Small', 'social-sharing-block' ), value: 'has-small-icon-size' },
+	{ name: __( 'Normal', 'social-sharing-block' ), value: 'has-normal-icon-size' },
+	{ name: __( 'Large', 'social-sharing-block' ), value: 'has-large-icon-size' },
+	{ name: __( 'Huge', 'social-sharing-block' ), value: 'has-huge-icon-size' },
 ];
 
 const getDefaultBlockLayout = ( blockTypeOrName ) => {
@@ -91,7 +91,7 @@ export function SocialSharingEdit( props ) {
 
 	const SelectedSocialPlaceholder = (
 		<li className="wp-block-outermost-social-sharing__social-prompt">
-			{ __( 'Click plus to add', 'social-sharing' ) }
+			{ __( 'Click plus to add', 'social-sharing-block' ) }
 		</li>
 	);
 
@@ -125,7 +125,7 @@ export function SocialSharingEdit( props ) {
 				setIconColor( colorValue );
 				setAttributes( { iconColorValue: colorValue } );
 			},
-			label: __( 'Icon color', 'social-sharing' ),
+			label: __( 'Icon color', 'social-sharing-block' ),
 		},
 	];
 
@@ -140,7 +140,7 @@ export function SocialSharingEdit( props ) {
 					iconBackgroundColorValue: colorValue,
 				} );
 			},
-			label: __( 'Icon background', 'social-sharing' ),
+			label: __( 'Icon background', 'social-sharing-block' ),
 		} );
 	}
 
@@ -148,8 +148,8 @@ export function SocialSharingEdit( props ) {
 		<Fragment>
 			<BlockControls group="other">
 				<ToolbarDropdownMenu
-					label={ __( 'Size', 'social-sharing' ) }
-					text={ __( 'Size', 'social-sharing' ) }
+					label={ __( 'Size', 'social-sharing-block' ) }
+					text={ __( 'Size', 'social-sharing-block' ) }
 					icon={ null }
 					popoverProps={ POPOVER_PROPS }
 				>
@@ -184,9 +184,9 @@ export function SocialSharingEdit( props ) {
 				</ToolbarDropdownMenu>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Link settings', 'social-sharing' ) }>
+				<PanelBody title={ __( 'Link settings', 'social-sharing-block' ) }>
 					<ToggleControl
-						label={ __( 'Show labels', 'social-sharing' ) }
+						label={ __( 'Show labels', 'social-sharing-block' ) }
 						checked={ showLabels }
 						onChange={ () =>
 							setAttributes( { showLabels: ! showLabels } )
@@ -196,7 +196,7 @@ export function SocialSharingEdit( props ) {
 				<PanelColorSettings
 					__experimentalHasMultipleOrigins
 					__experimentalIsRenderedInSidebar
-					title={ __( 'Color', 'social-sharing' ) }
+					title={ __( 'Color', 'social-sharing-block' ) }
 					colorSettings={ colorSettings }
 				/>
 				{ ! logosOnly && (

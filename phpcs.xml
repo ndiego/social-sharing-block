@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="plugin">
-	<description>Rules for The Social Sharing Block</description>
+	<description>Rules for the Social Sharing Block</description>
 
     <arg name="extensions" value="php" />
     <arg name="basepath" value="./" />
@@ -39,7 +39,7 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" value="the-social-share-block"/>
+			<property name="text_domain" value="social-sharing-block"/>
 		</properties>
 	</rule>
 </ruleset>

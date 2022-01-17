@@ -4,14 +4,14 @@
  * Description:       A simple little block that allows you add social share icons to your website.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           0.2.0
  * Author:            Nick Diego
  * Author URI:        https://www.nickdiego.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       social-sharing
+ * Text Domain:       social-sharing-block
  *
- * @package           Social Sharing
+ * @package           Social Sharing Block
  */
 
 /**
@@ -23,7 +23,7 @@ function outermost_social_sharing_init() {
 	register_block_type( __DIR__ . '/build/blocks/social-sharing' );
 
 	// Load available translations.
-	wp_set_script_translations( 'outermost-social-sharing-scripts', 'social-sharing' );
+	wp_set_script_translations( 'outermost-social-sharing-scripts', 'social-sharing-block' );
 }
 add_action( 'init', 'outermost_social_sharing_init' );
 
@@ -45,5 +45,5 @@ function outermost_social_sharing_enqueue_editor_assets() {
 }
 add_action( 'enqueue_block_editor_assets', 'outermost_social_sharing_enqueue_editor_assets' );
 
-// The Social Share Links block is rendered server-side.
+// The Social Sharing Link block is rendered server-side.
 require_once dirname( __FILE__ ) . '/build/blocks/social-sharing-link.php';

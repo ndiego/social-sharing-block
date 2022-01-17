@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 5.9
 Tested up to:      5.9
 Requires PHP:      7.0
-Stable tag:        0.1.0
+Stable tag:        0.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,13 +40,13 @@ Share options include:
 === Stay Connected ===
 
 * [Follow on Twitter](https://twitter.com/nickmdiego)
-* [View on GitHub](https://github.com/ndiego/social-sharing)
+* [View on GitHub](https://github.com/ndiego/social-sharing-block)
 
 == Installation ==
 
 1. You have a couple options:
-	* Go to Plugins &rarr; Add New and search for "Social Sharing". Once found, click "Install".
-	* Download the Social Sharing plugin from wordpress.org and make sure the folder us zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
+	* Go to Plugins &rarr; Add New and search for "Social Sharing Block". Once found, click "Install".
+	* Download the Social Sharing Block plugin from wordpress.org and make sure the folder us zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
     * Open the block inserter within the Block Editor (Gutenberg) and search for "icon". The plugin should appear and allow you to it install directly. Skip steps 2 and 3.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Search for the block within the Block Editor (Gutenberg) and begin using.
@@ -55,6 +55,10 @@ Share options include:
 
 == Changelog ==
 
-= 0.1.0 - TBD =
+= 0.2.0 - 2022-01-17 =
+
+* Update plugin name and text-domain to `social-sharing-block` to comply with wordpress.org requirements.
+
+= 0.1.0 - 2022-01-16 =
 
 * Initial release 🎉

@@ -38,7 +38,7 @@ const variations = [
 		name: 'mail',
 		attributes: { service: 'mail' },
 		title: 'Mail',
-		label: __( 'Email this Page', 'social-sharing' ),
+		label: __( 'Email this Page', 'social-sharing-block' ),
 		keywords: [ 'email', 'e-mail' ],
 		icon: MailIcon,
 	},
@@ -58,7 +58,7 @@ const variations = [
 		name: 'print',
 		attributes: { service: 'print' },
 		title: 'Print',
-		label: __( 'Print this Page', 'social-sharing' ),
+		label: __( 'Print this Page', 'social-sharing-block' ),
 		icon: PrintIcon,
 	},
 	{

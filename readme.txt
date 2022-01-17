@@ -12,7 +12,7 @@ Effortlessly add social share icons to your website.
 
 == Description ==
 
-A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
+A simple little block that allows you add social share icons to the Block Editor (Gutenberg). **This plugin requires WordPress 5.9.**
 
 Share options include:
 

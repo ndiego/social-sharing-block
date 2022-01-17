@@ -37,7 +37,7 @@ Share options include:
 * Includes some handy controls (show/hide labels, size, colors, etc.)
 * No block library required 🎉
 * Built almost entirely with native WordPress components
-* Will get additional functionality as its added to WordPress core (margin, borders, responsive controls etc.)
+* Will get additional functionality as it's added to WordPress core (margin, borders, responsive controls etc.)
 
 === Stay Connected ===
 

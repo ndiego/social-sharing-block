@@ -4,7 +4,9 @@
 
 ![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/.wordpress-org/banner-1544x500.png)
 
-A simple little block that allows you add social share icons to the Block Editor (Gutenberg). **This plugin requires WordPress 5.9.**
+**This plugin requires WordPress 5.9+.**
+
+A simple little block that allows you add social share icons to the Block Editor (Gutenberg).
 
 ### Sharing Options
 

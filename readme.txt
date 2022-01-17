@@ -53,9 +53,19 @@ Share options include:
 
 == Screenshots ==
 
+1. Social icons default to their appropriate brand colors. Easily choose your own icon and background colors using the block controls.
+2. The Social Sharing Block include three different styles and the ability to show/hide labels.
+3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
+
 == Changelog ==
 
 = 0.2.0 - 2022-01-17 =
+
+**Added**
+
+* Added screenshots.
+
+** Changed **
 
 * Update plugin name and text-domain to `social-sharing-block` to comply with wordpress.org requirements.
 

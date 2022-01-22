@@ -1,6 +1,6 @@
 {
 	"name": "outermost/social-sharing-block",
-	"description": "A simple little block that allows you add social share icons to your website.",
+	"description": "A simple little block that allows you to add social share icons to your website.",
 	"type": "wordpress-plugin",
 	"license": "GPL-2.0-or-later",
 	"require": {

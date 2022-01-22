@@ -23,5 +23,6 @@
 		"reusable": false,
 		"html": false
 	},
+	"editorScript": "outermost-social-sharing-scripts",
 	"editorStyle": "file:./../../editor.css"
 }

@@ -7,6 +7,8 @@
 	text-indent: 0;
 	// Some themes give all <ul> default margin instead of padding.
 	margin-left: 0;
+	// Unset background colors that can be inherited from Global Styles.
+	background: none;
 
 	// Some themes add underlines, false underlines (via shadows), and borders to <a>.
 	.outermost-social-sharing-link a,
@@ -31,7 +33,7 @@
 		span {
 			margin-left: 0.5em;
 		    margin-right: 0.5em;
-		    font-size: .65em;
+		    font-size: 0.65em;
 		}
 	}
 

@@ -1,10 +1,18 @@
+// Editor specific styles for Social Sharing.
+.editor-styles-wrapper {
+	.wp-block-outermost-social-sharing {
+		padding: 0;
+
+		// Unset background colors that can be inherited from Global Styles.
+		// This is a duplicate of a rule in style.scss, as it needs higher specificity in the editor.
+		// The rule can be removed if editor styles get lowered in specificity.
+		background: none;
+	}
+}
+
 // Prevent toolbar from jumping when selecting / hovering a link.
 .outermost-social-sharing-link:hover {
 	transform: none;
-}
-
-.editor-styles-wrapper .wp-block-outermost-social-sharing {
-	padding: 0;
 }
 
 // Placeholder/setup state.

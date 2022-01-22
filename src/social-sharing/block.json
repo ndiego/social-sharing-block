@@ -64,6 +64,7 @@
 		{ "name": "logos-only", "label": "Logos Only" },
 		{ "name": "pill-shape", "label": "Pill Shape" }
 	],
+	"editorScript": "outermost-social-sharing-scripts",
 	"editorStyle": "file:./../../editor.css",
 	"style": "file:./../../style.css"
 }

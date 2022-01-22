@@ -30,7 +30,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 
 	const IconComponent = getIconBySite( service );
 	const socialLinkName = getNameBySite( service );
-	const socialLikeLabel = label ? label : getLabelBySite( service );
+	const socialLinkLabel = label ? label : getLabelBySite( service );
 	const blockProps = useBlockProps( {
 		className: classes,
 		style: {
@@ -68,7 +68,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 			<li { ...blockProps }>
 				<Button>
 					<IconComponent />
-					{ showLabels && <span>{ socialLikeLabel }</span> }
+					{ showLabels && <span>{ socialLinkLabel }</span> }
 				</Button>
 			</li>
 		</>

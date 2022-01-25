@@ -64,12 +64,12 @@ Share options include:
 
 = 0.3.0 - 2022-01-22 =
 
-** Changed **
+**Changed**
 
 * Improve support for Full Site Editing by unsetting background colors. Stops color bleed from Global Styles. GitHub reference: [#37940](https://github.com/WordPress/gutenberg/pull/37940)
 * Update setting labels.
 
-** Fixed **
+**Fixed**
 
 * Fix missing `editorScript` specification in block.json files.
 * Fix missing 'to' in plugin description. 🤦‍♂️
@@ -81,7 +81,7 @@ Share options include:
 
 * Added screenshots.
 
-** Changed **
+**Changed**
 
 * Update plugin name and text-domain to `social-sharing-block` to comply with wordpress.org requirements.
 

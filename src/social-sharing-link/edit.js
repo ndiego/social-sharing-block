@@ -66,9 +66,19 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				</PanelBody>
 			</InspectorControls>
 			<li { ...blockProps }>
-				<Button>
+				<Button
+					className="wp-block-outermost-social-sharing-link-anchor"
+				>
 					<IconComponent />
-					{ showLabels && <span>{ socialLinkLabel }</span> }
+					<span
+						className={ classNames(
+							'wp-block-outermost-social-sharing-link-label', {
+								'screen-reader-text': ! showLabels,
+							}
+						) }
+					>
+						{ socialLinkLabel }
+					</span>
 				</Button>
 			</li>
 		</>

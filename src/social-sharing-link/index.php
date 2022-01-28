@@ -38,12 +38,9 @@ function render_block_outermost_social_sharing_link( $attributes, $content, $blo
 	$link  = '<li ' . $wrapper_attributes . '>';
 	$link .= '<a href="' . $url . '" aria-label="' . esc_attr( $label ) . '" ' . $rel_target_attributes . ' class="wp-block-outermost-social-sharing-link-anchor">';
 	$link .= $icon;
-
-	if ( $show_labels ) {
-		$link .= '<span class="wp-block-outermost-social-sharing-link-label">' . esc_attr( $label ) . '</span>';
-	}
-
-	$link .= '</a></li>';
+	$link .= '<span class="wp-block-outermost-social-sharing-link-label' . ( $show_labels ? '' : ' screen-reader-text' ) . '">';
+	$link .= esc_html( $label );
+	$link .= '</span></a></li>';
 
 	return $link;
 }

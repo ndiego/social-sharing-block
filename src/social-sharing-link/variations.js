@@ -8,6 +8,8 @@ import { __ } from '@wordpress/i18n';
  */
 import {
 	FacebookIcon,
+	FlipboardIcon,
+	LineIcon,
 	LinkedInIcon,
 	MailIcon,
 	PinterestIcon,
@@ -15,6 +17,7 @@ import {
 	PrintIcon,
 	RedditIcon,
 	SkypeIcon,
+	SMSIcon,
 	TelegramIcon,
 	TumblrIcon,
 	TwitterIcon,
@@ -27,6 +30,18 @@ const variations = [
 		attributes: { service: 'facebook' },
 		title: 'Facebook',
 		icon: FacebookIcon,
+	},
+	{
+		name: 'flipboard',
+		attributes: { service: 'flipboard' },
+		title: 'Flipboard',
+		icon: FlipboardIcon,
+	},
+	{
+		name: 'line',
+		attributes: { service: 'line' },
+		title: 'LINE',
+		icon: LineIcon,
 	},
 	{
 		name: 'linkedin',
@@ -72,6 +87,12 @@ const variations = [
 		attributes: { service: 'skype' },
 		title: 'Skype',
 		icon: SkypeIcon,
+	},
+	{
+		name: 'sms',
+		attributes: { service: 'sms' },
+		title: 'SMS',
+		icon: SMSIcon,
 	},
 	{
 		name: 'telegram',

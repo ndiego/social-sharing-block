@@ -30,9 +30,18 @@ import { check } from '@wordpress/icons';
 const ALLOWED_BLOCKS = [ 'outermost/social-sharing-link' ];
 
 const sizeOptions = [
-	{ name: __( 'Small', 'social-sharing-block' ), value: 'has-small-icon-size' },
-	{ name: __( 'Normal', 'social-sharing-block' ), value: 'has-normal-icon-size' },
-	{ name: __( 'Large', 'social-sharing-block' ), value: 'has-large-icon-size' },
+	{
+		name: __( 'Small', 'social-sharing-block' ),
+		value: 'has-small-icon-size',
+	},
+	{
+		name: __( 'Normal', 'social-sharing-block' ),
+		value: 'has-normal-icon-size',
+	},
+	{
+		name: __( 'Large', 'social-sharing-block' ),
+		value: 'has-large-icon-size',
+	},
 	{ name: __( 'Huge', 'social-sharing-block' ), value: 'has-huge-icon-size' },
 ];
 
@@ -184,7 +193,9 @@ export function SocialSharingEdit( props ) {
 				</ToolbarDropdownMenu>
 			</BlockControls>
 			<InspectorControls>
-				<PanelBody title={ __( 'Share settings', 'social-sharing-block' ) }>
+				<PanelBody
+					title={ __( 'Share settings', 'social-sharing-block' ) }
+				>
 					<ToggleControl
 						label={ __( 'Show labels', 'social-sharing-block' ) }
 						checked={ showLabels }

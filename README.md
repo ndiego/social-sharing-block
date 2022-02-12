@@ -6,16 +6,19 @@
 
 **This plugin requires WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active.**
 
-A simple little block that allows you to add social share icons to the Block Editor. Choose from 10+ of the most popular social channels.
+A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels.
 
 ### Sharing Options
 
 - Facebook
+- Flipboard (New)
+- LINE (New)
 - LinkedIn
 - Pinterest
 - Pocket
 - Reddit
 - Skype
+- SMS (New)
 - Telegram
 - Tumblr
 - Twitter

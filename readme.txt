@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 5.8
 Tested up to:      5.9
 Requires PHP:      7.0
-Stable tag:        0.3.0
+Stable tag:        0.4.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,16 +14,19 @@ Effortlessly add social share icons to your website.
 
 **This plugin requires WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active.**
 
-A simple little block that allows you to add social share icons to the Block Editor. Choose from 10+ of the most popular social channels.
+A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels.
 
 Share options include:
 
 * Facebook
+* Flipboard (New)
+* LINE (New)
 * LinkedIn
 * Pinterest
 * Pocket
 * Reddit
 * Skype
+* SMS (New)
 * Telegram
 * Tumblr
 * Twitter
@@ -61,6 +64,18 @@ Share options include:
 3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
 
 == Changelog ==
+
+= 0.4.0 - 2022-02-12 =
+
+**Added**
+
+* Add support for Flipboard sharing.
+* Add support for LINE sharing.
+* Add support for SMS sharing.
+
+**Changed**
+
+* Updated label markup to improve accessibility.
 
 = 0.3.0 - 2022-01-22 =
 

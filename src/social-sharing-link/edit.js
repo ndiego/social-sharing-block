@@ -52,7 +52,10 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				>
 					<PanelRow>
 						<TextControl
-							label={ __( 'Share label', 'social-sharing-block' ) }
+							label={ __(
+								'Share label',
+								'social-sharing-block'
+							) }
 							help={ __(
 								'Briefly describe the share link to help screen reader users.',
 								'social-sharing-block'
@@ -66,13 +69,12 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				</PanelBody>
 			</InspectorControls>
 			<li { ...blockProps }>
-				<Button
-					className="wp-block-outermost-social-sharing-link-anchor"
-				>
+				<Button className="wp-block-outermost-social-sharing-link-anchor">
 					<IconComponent />
 					<span
 						className={ classNames(
-							'wp-block-outermost-social-sharing-link-label', {
+							'wp-block-outermost-social-sharing-link-label',
+							{
 								'screen-reader-text': ! showLabels,
 							}
 						) }

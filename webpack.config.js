@@ -41,20 +41,6 @@ module.exports = {
 						},
 						noErrorOnMissing: true,
 					},
-					{
-						from: `${ from }/*/block.json`,
-						to( { absoluteFilename } ) {
-							const [ , dirname ] = absoluteFilename.match(
-								new RegExp(
-									`([\\w-]+)${ escapeRegExp(
-										sep
-									) }block\\.json$`
-								)
-							);
-
-							return join( to, dirname, 'block.json' );
-						},
-					},
 				] )
 			),
 		} ),

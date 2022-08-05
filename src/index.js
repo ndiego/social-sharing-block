@@ -6,8 +6,8 @@ import { registerBlockType } from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import * as socialSharing from './social-sharing';
-import * as socialSharingLink from './social-sharing-link';
+import * as socialSharing from './blocks/social-sharing';
+import * as socialSharingLink from './blocks/social-sharing-link';
 
 /**
  * Function to register an individual block.

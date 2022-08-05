@@ -2,7 +2,7 @@
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
 Requires at least: 5.9
-Tested up to:      5.9
+Tested up to:      6.0
 Requires PHP:      7.0
 Stable tag:        0.5.0
 License:           GPL-2.0-or-later

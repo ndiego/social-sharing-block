@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Social Sharing Block
  * Description:       A simple little block that allows you to add social share icons to your website.
- * Requires at least: 5.8
+ * Requires at least: 5.9
  * Requires PHP:      7.0
  * Version:           0.5.0
  * Author:            Nick Diego

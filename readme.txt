@@ -1,18 +1,16 @@
 === Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
-Requires at least: 5.8
+Requires at least: 5.9
 Tested up to:      5.9
 Requires PHP:      7.0
-Stable tag:        0.4.0
+Stable tag:        0.5.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
 Effortlessly add social share icons to your website.
 
 == Description ==
-
-**This plugin requires WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active.**
 
 A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels.
 
@@ -65,6 +63,13 @@ Share options include:
 
 == Changelog ==
 
+= 0.5.0 - 2022-08-05 =
+
+**Changed**
+
+* Update incorrect and/or outdated social icon brand colors.
+* Update minimum required WordPress version to 5.9.
+
 = 0.4.0 - 2022-02-12 =
 
 **Added**
@@ -75,7 +80,7 @@ Share options include:
 
 **Changed**
 
-* Updated label markup to improve accessibility.
+* Update label markup to improve accessibility.
 
 = 0.3.0 - 2022-01-22 =
 
@@ -94,7 +99,7 @@ Share options include:
 
 **Added**
 
-* Added screenshots.
+* Add screenshots.
 
 **Changed**
 

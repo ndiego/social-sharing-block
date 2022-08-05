@@ -1,10 +1,8 @@
 # Social Sharing Block
 
-[![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/social-share-block/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/social-share-block/blob/master/LICENSE.txt) ![WordPress Plugin Active Installs](https://img.shields.io/wordpress/plugin/installs/social-sharing-block?color=%23007cba&label=Active%20Installs&logo=wordpress&style=flat-square)
 
 ![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/.wordpress-org/banner-1544x500.png)
-
-**This plugin requires WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active.**
 
 A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels.
 
@@ -37,7 +35,7 @@ A simple little block that allows you to add social share icons to the Block Edi
 
 ## Requirements
 
-- WordPress 5.9+ or 5.8+ with [Gutenberg](https://wordpress.org/plugins/gutenberg/) active
+- WordPress 5.9+
 - PHP 7.0+
 
 ## Development

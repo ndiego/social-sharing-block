@@ -67,7 +67,7 @@ Share options include:
 
 **Added**
 
-* Add support transparency in both icon and background colors.
+* Add support for transparency in both icon and background colors.
 
 **Changed**
 

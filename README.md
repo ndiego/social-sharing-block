@@ -9,14 +9,14 @@ A simple little block that allows you to add social share icons to the Block Edi
 ### Sharing Options
 
 - Facebook
-- Flipboard (New)
-- LINE (New)
+- Flipboard
+- LINE
 - LinkedIn
 - Pinterest
 - Pocket
 - Reddit
 - Skype
-- SMS (New)
+- SMS
 - Telegram
 - Tumblr
 - Twitter

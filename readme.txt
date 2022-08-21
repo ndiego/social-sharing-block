@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 5.9
 Tested up to:      6.0
 Requires PHP:      7.0
-Stable tag:        0.5.0
+Stable tag:        0.6.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,14 +17,14 @@ A simple little block that allows you to add social share icons to the Block Edi
 Share options include:
 
 * Facebook
-* Flipboard (New)
-* LINE (New)
+* Flipboard
+* LINE
 * LinkedIn
 * Pinterest
 * Pocket
 * Reddit
 * Skype
-* SMS (New)
+* SMS
 * Telegram
 * Tumblr
 * Twitter
@@ -62,6 +62,17 @@ Share options include:
 3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
 
 == Changelog ==
+
+= 0.6.0 - 2022-08-21 =
+
+**Added**
+
+* Add support transparency in both icon and background colors.
+
+**Changed**
+
+* Updated Reddit icon to match brand guidelines.
+* Simplified icons SVGs to reduce plugin size.
 
 = 0.5.0 - 2022-08-05 =
 

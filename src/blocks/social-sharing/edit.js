@@ -197,28 +197,30 @@ export function SocialSharingEdit( props ) {
 					title={ __( 'Share settings', 'social-sharing-block' ) }
 				>
 					<ToggleControl
-						label={ __( 'Show labels', 'social-sharing-block' ) }
 						checked={ showLabels }
+						label={ __( 'Show labels', 'social-sharing-block' ) }
 						onChange={ () =>
 							setAttributes( { showLabels: ! showLabels } )
 						}
 					/>
 				</PanelBody>
 				<PanelColorSettings
+					colorSettings={ colorSettings }
+					enableAlpha
+					title={ __( 'Color', 'social-sharing-block' ) }
 					__experimentalHasMultipleOrigins
 					__experimentalIsRenderedInSidebar
-					title={ __( 'Color', 'social-sharing-block' ) }
-					colorSettings={ colorSettings }
-				/>
-				{ ! logosOnly && (
-					<ContrastChecker
-						{ ...{
-							textColor: iconColorValue,
-							backgroundColor: iconBackgroundColorValue,
-						} }
-						isLargeText={ false }
-					/>
-				) }
+				>
+					{ ! logosOnly && (
+						<ContrastChecker
+							{ ...{
+								textColor: iconColorValue,
+								backgroundColor: iconBackgroundColorValue,
+							} }
+							isLargeText={ false }
+						/>
+					) }
+				</PanelColorSettings>
 			</InspectorControls>
 			<ul { ...innerBlocksProps } />
 		</Fragment>
@@ -226,8 +228,8 @@ export function SocialSharingEdit( props ) {
 }
 
 const iconColorAttributes = {
-	iconColor: 'icon-color',
 	iconBackgroundColor: 'icon-background-color',
+	iconColor: 'icon-color',
 };
 
 export default withColors( iconColorAttributes )( SocialSharingEdit );

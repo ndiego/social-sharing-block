@@ -16,8 +16,9 @@
  */
 function render_block_outermost_social_sharing_link( $attributes, $content, $block ) { // phpcs:ignore
 	$service     = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
-	$url         = block_outermost_social_sharing_link_get_url( $service );
 	$label       = ( isset( $attributes['label'] ) ) ? $attributes['label'] : block_outermost_social_sharing_link_get_label( $service );
+	$phone       = ( isset( $attributes['phone'] ) ) ? $attributes['phone'] : '';
+	$url         = block_outermost_social_sharing_link_get_url( $service, $phone );
 	$show_labels = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
 	$class_name  = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : false;
 
@@ -95,17 +96,25 @@ function block_outermost_social_sharing_link_get_label( $service ) {
  * Returns the brand name for the Social Sharing Link.
  *
  * @param string $service The service icon.
+ * @param string $phone Phone number attribute.
  *
  * @return string Brand label.
  */
-function block_outermost_social_sharing_link_get_url( $service ) {
+function block_outermost_social_sharing_link_get_url( $service, $phone = '' ) {
 	$services = block_outermost_social_sharing_link_services();
+
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['url'] ) ) {
-		// The print service uses Javascript and should be escaped differently.
-		return 'print' === $service ? esc_js( $services[ $service ]['url'] ) : esc_url( $services[ $service ]['url'] );
+		$url = $services[ $service ]['url'];
+	} else {
+		$url = $services['mail']['url'];
 	}
 
-	return $services['mail']['url'];
+	if ( $phone && 'whatsapp' === $service ) {
+		$url .= '&phone=' . $phone;
+	}
+
+	// The print service uses Javascript and should be escaped differently.
+	return 'print' === $service ? esc_js( $url ) : esc_url( $url );
 }
 
 /**

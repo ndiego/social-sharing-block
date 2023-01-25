@@ -21,7 +21,7 @@ import { __, sprintf } from '@wordpress/i18n';
 import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
 
 const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
-	const { service, label } = attributes;
+	const { service, label, phone } = attributes;
 	const { showLabels, iconColorValue, iconBackgroundColorValue } = context;
 	const classes = classNames(
 		'outermost-social-sharing-link',
@@ -66,6 +66,20 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 							}
 						/>
 					</PanelRow>
+					{ service === 'whatsapp' &&
+					<PanelRow>
+						<TextControl
+							label={ __(
+								'Phone number',
+								'social-sharing-block'
+							) }
+							value={ phone }
+							onChange={ ( value ) =>
+								setAttributes( { phone: value } )
+							}
+						/>
+					</PanelRow>
+					}
 				</PanelBody>
 			</InspectorControls>
 			<li { ...blockProps }>

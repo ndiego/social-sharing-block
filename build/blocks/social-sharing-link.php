@@ -128,7 +128,7 @@ function block_outermost_social_sharing_link_services( $service = '', $field = '
 
 	$permalink = rawurlencode( get_the_permalink() );
 	$title     = rawurlencode( get_the_title() );
-	$image     = rawurlencode( esc_url( $thumbnail ) );
+	$image     = empty( $thumbnail ) ? '' : rawurlencode( esc_url( $thumbnail ) );
 	$separator = '%20&mdash;%20';
 
 	$services_data = array(

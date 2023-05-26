@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
@@ -22,10 +22,21 @@ import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
 
 const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 	const { service, label } = attributes;
-	const { showLabels, iconColorValue, iconBackgroundColorValue } = context;
-	const classes = classNames(
+	const {
+		showLabels,
+		iconColor,
+		iconColorValue,
+		iconBackgroundColor,
+		iconBackgroundColorValue,
+	} = context;
+
+	const classes = classnames(
 		'outermost-social-sharing-link',
-		'outermost-social-sharing-link-' + service
+		'outermost-social-sharing-link-' + service, {
+			[ `has-${ iconColor }-color` ]: iconColor,
+			[ `has-${ iconBackgroundColor }-background-color` ]:
+			iconBackgroundColor,
+		}
 	);
 
 	const IconComponent = getIconBySite( service );
@@ -72,7 +83,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 				<Button className="wp-block-outermost-social-sharing-link-anchor">
 					<IconComponent />
 					<span
-						className={ classNames(
+						className={ classnames(
 							'wp-block-outermost-social-sharing-link-label',
 							{
 								'screen-reader-text': ! showLabels,

@@ -35,7 +35,7 @@ A simple little block that allows you to add social share icons to the Block Edi
 
 ## Requirements
 
-- WordPress 5.9+
+- WordPress 6.2+
 - PHP 7.0+
 
 ## Development

@@ -6,16 +6,16 @@ import classNames from 'classnames';
 /**
  * WordPress dependencies
  */
-import { getBlockSupport } from '@wordpress/blocks';
-import { Fragment, useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import {
 	BlockControls,
 	useInnerBlocksProps,
 	useBlockProps,
 	InspectorControls,
 	ContrastChecker,
-	PanelColorSettings,
 	withColors,
+	__experimentalColorGradientSettingsDropdown as ColorGradientSettingsDropdown,
+	__experimentalUseMultipleOriginColorsAndGradients as useMultipleOriginColorsAndGradients,
 } from '@wordpress/block-editor';
 import {
 	MenuGroup,
@@ -45,17 +45,9 @@ const sizeOptions = [
 	{ name: __( 'Huge', 'social-sharing-block' ), value: 'has-huge-icon-size' },
 ];
 
-const getDefaultBlockLayout = ( blockTypeOrName ) => {
-	const layoutBlockSupportConfig = getBlockSupport(
-		blockTypeOrName,
-		'__experimentalLayout'
-	);
-	return layoutBlockSupportConfig?.default;
-};
-
 export function SocialSharingEdit( props ) {
 	const {
-		name,
+		clientId,
 		attributes,
 		iconBackgroundColor,
 		iconColor,
@@ -67,26 +59,34 @@ export function SocialSharingEdit( props ) {
 
 	const {
 		iconBackgroundColorValue,
+		customIconBackgroundColor,
 		iconColorValue,
 		layout,
 		showLabels,
 		size,
 	} = attributes;
-	const usedLayout = layout || getDefaultBlockLayout( name );
 
 	// Remove icon background color if logos only style selected.
 	const logosOnly =
 		attributes.className?.indexOf( 'is-style-logos-only' ) >= 0;
 
+	const backgroundBackup = useRef( {} );
 	useEffect( () => {
 		if ( logosOnly ) {
+			backgroundBackup.current = {
+				iconBackgroundColor,
+				iconBackgroundColorValue,
+				customIconBackgroundColor,
+			};
 			setAttributes( {
 				iconBackgroundColor: undefined,
 				customIconBackgroundColor: undefined,
 				iconBackgroundColorValue: undefined,
 			} );
+		} else {
+			setAttributes( { ...backgroundBackup.current } );
 		}
-	}, [ logosOnly, setAttributes ] );
+	}, [ logosOnly ] );
 
 	const SocialPlaceholder = (
 		<li className="wp-block-outermost-social-sharing__social-placeholder">
@@ -117,8 +117,8 @@ export function SocialSharingEdit( props ) {
 		allowedBlocks: ALLOWED_BLOCKS,
 		placeholder: isSelected ? SelectedSocialPlaceholder : SocialPlaceholder,
 		templateLock: false,
+		orientation: layout?.orientation ?? 'horizontal',
 		__experimentalAppenderTagName: 'li',
-		__experimentalLayout: usedLayout,
 	} );
 
 	const POPOVER_PROPS = {
@@ -135,6 +135,10 @@ export function SocialSharingEdit( props ) {
 				setAttributes( { iconColorValue: colorValue } );
 			},
 			label: __( 'Icon color', 'social-sharing-block' ),
+			resetAllFilter: () => {
+				setIconColor( undefined );
+				setAttributes( { iconColorValue: undefined } );
+			},
 		},
 	];
 
@@ -145,16 +149,23 @@ export function SocialSharingEdit( props ) {
 			value: iconBackgroundColor.color || iconBackgroundColorValue,
 			onChange: ( colorValue ) => {
 				setIconBackgroundColor( colorValue );
-				setAttributes( {
-					iconBackgroundColorValue: colorValue,
-				} );
+				setAttributes( { iconBackgroundColorValue: colorValue } );
 			},
 			label: __( 'Icon background', 'social-sharing-block' ),
+			resetAllFilter: () => {
+				setIconBackgroundColor( undefined );
+				setAttributes( { iconBackgroundColorValue: undefined } );
+			},
 		} );
 	}
 
+	const colorGradientSettings = useMultipleOriginColorsAndGradients();
+
+	// In WordPress <=6.2 this will return null, so default to true in those cases.
+	const hasColorsOrGradients = colorGradientSettings?.hasColorsOrGradients ?? true;
+
 	return (
-		<Fragment>
+		<>
 			<BlockControls group="other">
 				<ToolbarDropdownMenu
 					label={ __( 'Size', 'social-sharing-block' ) }
@@ -204,13 +215,29 @@ export function SocialSharingEdit( props ) {
 						}
 					/>
 				</PanelBody>
-				<PanelColorSettings
-					colorSettings={ colorSettings }
-					enableAlpha
-					title={ __( 'Color', 'social-sharing-block' ) }
-					__experimentalHasMultipleOrigins
-					__experimentalIsRenderedInSidebar
-				>
+			</InspectorControls>
+			{ hasColorsOrGradients && (
+				<InspectorControls group="color">
+					{ colorSettings.map(
+						( { onChange, label, value, resetAllFilter } ) => (
+							<ColorGradientSettingsDropdown
+								key={ `social-sharing-color-${ label }` }
+								__experimentalIsRenderedInSidebar
+								settings={ [
+									{
+										colorValue: value,
+										label,
+										onColorChange: onChange,
+										isShownByDefault: true,
+										resetAllFilter,
+										enableAlpha: true,
+									},
+								] }
+								panelId={ clientId }
+								{ ...colorGradientSettings }
+							/>
+						)
+					) }
 					{ ! logosOnly && (
 						<ContrastChecker
 							{ ...{
@@ -220,10 +247,10 @@ export function SocialSharingEdit( props ) {
 							isLargeText={ false }
 						/>
 					) }
-				</PanelColorSettings>
-			</InspectorControls>
+				</InspectorControls>
+			) }
 			<ul { ...innerBlocksProps } />
-		</Fragment>
+		</>
 	);
 }
 

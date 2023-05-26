@@ -1,8 +1,8 @@
 === Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
-Requires at least: 5.9
-Tested up to:      6.0
+Requires at least: 6.2
+Tested up to:      6.2
 Requires PHP:      7.0
 Stable tag:        0.6.0
 License:           GPL-2.0-or-later
@@ -62,6 +62,17 @@ Share options include:
 3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
 
 == Changelog ==
+
+= 0.7.0 - 2023-05-26 =
+
+**Changed**
+
+* Plugin now requires WordPress 6.2 and above. We want to be utilizing the latest functionality in WordPress.
+* Changed the color picker component to integrated better with Core.
+
+**Fixed**
+
+* Icon colors will now update automatically when the set colors are changed in Global Styles or in theme.json.
 
 = 0.6.0 - 2022-08-21 =
 

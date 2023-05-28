@@ -139,3 +139,12 @@
 		padding-right: calc((2/3) * 1em);
 	}
 }
+
+// Temporary fix for post template link styling.
+.wp-block-post-template.is-flex-container {
+	.wp-block-outermost-social-sharing {
+		li {
+			width: auto;
+		}
+	}
+}

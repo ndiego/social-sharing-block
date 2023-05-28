@@ -63,12 +63,17 @@ Share options include:
 
 == Changelog ==
 
-= 0.7.0 - 2023-05-26 =
+= 0.7.0 - 2023-05-29 =
+
+**Added**
+
+* Add ability to share a custom link.
+* Add support for archive pages.
 
 **Changed**
 
-* Plugin now requires WordPress 6.2 and above. We want to be utilizing the latest functionality in WordPress.
-* Changed the color picker component to integrated better with Core.
+* Update minimum required WordPress veriosn to 6.2. We want to be utilizing the latest functionality in WordPress.
+* Change the color picker component to integrated better with Core.
 
 **Fixed**
 

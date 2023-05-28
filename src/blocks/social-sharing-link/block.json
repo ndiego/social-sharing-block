@@ -15,11 +15,14 @@
         }
     },
     "usesContext": [
-		"showLabels",
+		"iconBackgroundColor",
+		"iconBackgroundColorValue",
 		"iconColor",
 		"iconColorValue",
-		"iconBackgroundColor",
-		"iconBackgroundColorValue"
+		"showLabels",
+		"shareCustomLink",
+		"linkTitle",
+		"url"
 	],
     "supports": {
 		"reusable": false,

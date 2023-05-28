@@ -30,6 +30,12 @@
 	<rule ref="PHPCompatibilityWP"/>
 
 	<!--
+	Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+.
+	See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035
+	-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
+	<!--
 	To get the optimal benefits of using WPCS, we should add a couple of
 	custom properties. Adjust the values of these properties to fit our needs.
 	For information on additional custom properties available, check out

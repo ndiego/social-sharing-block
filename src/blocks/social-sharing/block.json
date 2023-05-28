@@ -32,14 +32,27 @@
 		},
 		"size": {
 			"type": "string"
+		},
+		"shareCustomLink": {
+            "type": "boolean",
+            "default": false
+        },
+		"linkTitle": {
+            "type": "string"
+		},
+        "url": {
+            "type": "string"
 		}
 	},
 	"providesContext": {
-		"showLabels": "showLabels",
+		"iconBackgroundColor": "iconBackgroundColor",
+		"iconBackgroundColorValue": "iconBackgroundColorValue",
 		"iconColor": "iconColor",
 		"iconColorValue": "iconColorValue",
-		"iconBackgroundColor": "iconBackgroundColor",
-		"iconBackgroundColorValue": "iconBackgroundColorValue"
+		"showLabels": "showLabels",
+		"shareCustomLink": "shareCustomLink",
+		"linkTitle": "linkTitle",
+		"url": "url"
 	},
 	"supports": {
 		"align": [ "left", "center", "right" ],

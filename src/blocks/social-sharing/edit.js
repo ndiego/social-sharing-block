@@ -6,7 +6,7 @@ import classNames from 'classnames';
 /**
  * WordPress dependencies
  */
-import { useEffect, useRef } from '@wordpress/element';
+import { useEffect, useState, useRef } from '@wordpress/element';
 import {
 	BlockControls,
 	useInnerBlocksProps,
@@ -16,16 +16,23 @@ import {
 	withColors,
 	__experimentalColorGradientSettingsDropdown as ColorGradientSettingsDropdown,
 	__experimentalUseMultipleOriginColorsAndGradients as useMultipleOriginColorsAndGradients,
+	__experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
 import {
 	MenuGroup,
 	MenuItem,
 	PanelBody,
+	Popover,
+	TextControl,
 	ToggleControl,
+	ToolbarButton,
 	ToolbarDropdownMenu,
 } from '@wordpress/components';
+import { displayShortcut, isKeyboardEvent } from '@wordpress/keycodes';
+import { prependHTTP } from '@wordpress/url';
+import { useMergeRefs } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
-import { check } from '@wordpress/icons';
+import { check, link, linkOff } from '@wordpress/icons';
 
 const ALLOWED_BLOCKS = [ 'outermost/social-sharing-link' ];
 
@@ -62,18 +69,29 @@ export function SocialSharingEdit( props ) {
 		customIconBackgroundColor,
 		iconColorValue,
 		layout,
-		showLabels,
 		size,
+		showLabels,
+		shareCustomLink,
+		url,
+		linkTitle,
 	} = attributes;
+
+	const [ isEditingURL, setIsEditingURL ] = useState( false );
+
+	// Use internal state instead of a ref to make sure that the component
+	// re-renders when the popover's anchor updates.
+	const [ popoverAnchor, setPopoverAnchor ] = useState( null );
 
 	// Remove icon background color if logos only style selected.
 	const logosOnly =
 		attributes.className?.indexOf( 'is-style-logos-only' ) >= 0;
 
-	const backgroundBackup = useRef( {} );
+	const blockRef = useRef();
+	const backgroundBackupRef = useRef( {} );
+
 	useEffect( () => {
 		if ( logosOnly ) {
-			backgroundBackup.current = {
+			backgroundBackupRef.current = {
 				iconBackgroundColor,
 				iconBackgroundColorValue,
 				customIconBackgroundColor,
@@ -84,9 +102,26 @@ export function SocialSharingEdit( props ) {
 				iconBackgroundColorValue: undefined,
 			} );
 		} else {
-			setAttributes( { ...backgroundBackup.current } );
+			setAttributes( { ...backgroundBackupRef.current } );
 		}
 	}, [ logosOnly ] );
+
+	// Handle keboard shortcuts for adding a custom link.
+	function onKeyDown( event ) {
+		if ( isKeyboardEvent.primary( event, 'k' ) ) {
+			startEditing( event );
+		} else if ( isKeyboardEvent.primaryShift( event, 'k' ) ) {
+			unlink();
+		}
+	}
+
+	// Fallback color values are used maintain selections in case switching
+	// themes and named colors in palette do not match.
+	const className = classNames( size, {
+		'has-icon-color': iconColor.color || iconColorValue,
+		'has-icon-background-color':
+			iconBackgroundColor.color || iconBackgroundColorValue,
+	} );
 
 	const SocialPlaceholder = (
 		<li className="wp-block-outermost-social-sharing__social-placeholder">
@@ -104,15 +139,11 @@ export function SocialSharingEdit( props ) {
 		</li>
 	);
 
-	// Fallback color values are used maintain selections in case switching
-	// themes and named colors in palette do not match.
-	const className = classNames( size, {
-		'has-icon-color': iconColor.color || iconColorValue,
-		'has-icon-background-color':
-			iconBackgroundColor.color || iconBackgroundColorValue,
+	const blockProps = useBlockProps( {
+		ref: useMergeRefs( [ setPopoverAnchor, blockRef ] ),
+		onKeyDown,
+		className,
 	} );
-
-	const blockProps = useBlockProps( { className } );
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		allowedBlocks: ALLOWED_BLOCKS,
 		placeholder: isSelected ? SelectedSocialPlaceholder : SocialPlaceholder,
@@ -120,10 +151,6 @@ export function SocialSharingEdit( props ) {
 		orientation: layout?.orientation ?? 'horizontal',
 		__experimentalAppenderTagName: 'li',
 	} );
-
-	const POPOVER_PROPS = {
-		position: 'bottom right',
-	};
 
 	const colorSettings = [
 		{
@@ -164,6 +191,18 @@ export function SocialSharingEdit( props ) {
 	// In WordPress <=6.2 this will return null, so default to true in those cases.
 	const hasColorsOrGradients = colorGradientSettings?.hasColorsOrGradients ?? true;
 
+	const isURLSet = !! url;
+
+	function startEditing( event ) {
+		event.preventDefault();
+		setIsEditingURL( true );
+	}
+
+	function unlink() {
+		setAttributes( { url: undefined } );
+		setIsEditingURL( false );
+	}
+
 	return (
 		<>
 			<BlockControls group="other">
@@ -171,7 +210,7 @@ export function SocialSharingEdit( props ) {
 					label={ __( 'Size', 'social-sharing-block' ) }
 					text={ __( 'Size', 'social-sharing-block' ) }
 					icon={ null }
-					popoverProps={ POPOVER_PROPS }
+					popoverProps={ { position: 'bottom right' } }
 				>
 					{ ( { onClose } ) => (
 						<MenuGroup>
@@ -203,6 +242,50 @@ export function SocialSharingEdit( props ) {
 					) }
 				</ToolbarDropdownMenu>
 			</BlockControls>
+			{ shareCustomLink && (
+				<BlockControls group="inline">
+					{ ! isURLSet && (
+						<ToolbarButton
+							name="link"
+							icon={ link }
+							title={ __( 'Link', 'social-sharing-block' ) }
+							shortcut={ displayShortcut.primary( 'k' ) }
+							onClick={ startEditing }
+						/>
+					) }
+					{ isURLSet && (
+						<ToolbarButton
+							name="link"
+							icon={ linkOff }
+							title={ __( 'Unlink', 'social-sharing-block' ) }
+							shortcut={ displayShortcut.primaryShift( 'k' ) }
+							onClick={ unlink }
+							isActive={ true }
+						/>
+					) }
+				</BlockControls>
+			) }
+			{ isSelected && shareCustomLink && ( isEditingURL || isURLSet ) && (
+				<Popover
+					placement="bottom"
+					onClose={ () => setIsEditingURL( false ) }
+					anchor={ popoverAnchor }
+					focusOnMount={ isEditingURL ? 'firstElement' : false }
+					__unstableSlotName={ '__unstable-block-tools-after' }
+					shift
+				>
+					<LinkControl
+						className="wp-block-navigation-link__inline-link-input"
+						value={ { url } }
+						onChange={ ( { url: newURL = '' } ) =>
+							setAttributes( { url: prependHTTP( newURL ) } )
+						}
+						onRemove={ () => unlink() }
+						forceIsEditingLink={ isEditingURL }
+						settings={ [] }
+					/>
+				</Popover>
+			) }
 			<InspectorControls>
 				<PanelBody
 					title={ __( 'Share settings', 'social-sharing-block' ) }
@@ -214,6 +297,22 @@ export function SocialSharingEdit( props ) {
 							setAttributes( { showLabels: ! showLabels } )
 						}
 					/>
+					<ToggleControl
+						checked={ shareCustomLink }
+						label={ __( 'Share custom link', 'social-sharing-block' ) }
+						onChange={ () =>
+							setAttributes( { shareCustomLink: ! shareCustomLink } )
+						}
+					/>
+					{ shareCustomLink && (
+						<TextControl
+							label={ __( 'Link title', 'social-sharing-block' ) }
+							value={ linkTitle }
+							onChange={ ( title ) =>
+								setAttributes( { linkTitle: title } )
+							}
+						/>
+					) }
 				</PanelBody>
 			</InspectorControls>
 			{ hasColorsOrGradients && (

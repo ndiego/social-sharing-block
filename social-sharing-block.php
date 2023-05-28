@@ -4,7 +4,7 @@
  * Description:       A simple little block that allows you to add social share icons to your website.
  * Requires at least: 6.2
  * Requires PHP:      7.0
- * Version:           0.6.0
+ * Version:           0.7.0
  * Author:            Nick Diego
  * Author URI:        https://www.nickdiego.com
  * License:           GPL-2.0-or-later

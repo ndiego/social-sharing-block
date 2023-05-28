@@ -127,12 +127,22 @@ function outermost_social_sharing_link_services( $share_custom_link, $block ) {
 		$permalink = rawurlencode( $custom_link );
 		$title     = array_key_exists( 'linkTitle', $block->context ) ? rawurlencode( $block->context['linkTitle'] ) : '';
 		$image     = null;
-	} elseif ( is_archive() ) {
+
+		// Only use the site link if the block is placed outside the loop.
+	} elseif ( ( is_front_page() || is_home() ) && ! in_the_loop() ) {
+		$permalink = rawurlencode( home_url() );
+		$title     = rawurlencode( get_bloginfo( 'name' ) );
+		$image     = null;
+
+		// Only use the achive link if the block is placed outside the loop.
+	} elseif ( is_archive() && ! in_the_loop() ) {
 		global $wp;
-		$current_url = home_url( $wp->request ) . '/';
+		$current_url = home_url( $wp->request );
 		$permalink   = rawurlencode( $current_url );
 		$title       = rawurlencode( wp_strip_all_tags( get_the_archive_title() ) );
 		$image       = null;
+
+		// In all other instances, default to the first fetchable post.
 	} else {
 		global $post;
 

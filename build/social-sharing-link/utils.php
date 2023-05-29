@@ -33,7 +33,7 @@ function get_icon( $service, $services ) {
  *
  * @return String The service label.
  */
-function outermost_social_sharing_link_get_label( $service, $services ) {
+function get_label( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['label'] ) ) {
 		return $services[ $service ]['label'];
 	}
@@ -55,7 +55,7 @@ function get_url( $service, $services ) {
 		return 'print' === $service ? esc_js( $services[ $service ]['url'] ) : esc_url( $services[ $service ]['url'] );
 	}
 
-	return $services['mail']['url'];
+	return esc_url( $services['mail']['url'] );
 }
 
 /**

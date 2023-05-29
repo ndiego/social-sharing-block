@@ -12,4 +12,5 @@ export * from './sms';
 export * from './telegram';
 export * from './tumblr';
 export * from './twitter';
+export * from './viber';
 export * from './whatsapp';

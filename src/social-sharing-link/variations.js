@@ -21,6 +21,7 @@ import {
 	TelegramIcon,
 	TumblrIcon,
 	TwitterIcon,
+	ViberIcon,
 	WhatsAppIcon,
 } from './icons';
 
@@ -112,6 +113,12 @@ const variations = [
 		attributes: { service: 'twitter' },
 		title: 'Twitter',
 		icon: TwitterIcon,
+	},
+	{
+		name: 'viber',
+		attributes: { service: 'viber' },
+		title: 'Viber',
+		icon: ViberIcon,
 	},
 	{
 		name: 'whatsapp',

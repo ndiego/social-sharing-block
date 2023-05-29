@@ -28,6 +28,7 @@ Share options include:
 * Telegram
 * Tumblr
 * Twitter
+* Viber
 * WhatsApp
 * Email
 * Print
@@ -67,6 +68,7 @@ Share options include:
 
 **Added**
 
+* Add support for Viber sharing.
 * Add ability to share a custom link.
 * Add support for home/front pages. Icons will share the main site url and name if the block is not placed in a loop.
 * Add support for archive pages. Icons will share the archive url and title if the block is not placed in a loop.

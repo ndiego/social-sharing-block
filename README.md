@@ -20,6 +20,7 @@ A simple little block that allows you to add social share icons to the Block Edi
 - Telegram
 - Tumblr
 - Twitter
+- Viber
 - WhatsApp
 - Email
 - Print

@@ -16,7 +16,7 @@ $share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $b
 $service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
 $services          = get_link_services( $share_custom_link, $block );
 $url               = get_url( $service, $services );
-$label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : outermost_social_sharing_link_get_label( $service, $services );
+$label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : get_label( $service, $services );
 $show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
 $class_name        = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : false;
 
@@ -34,11 +34,12 @@ $wrapper_attributes = get_block_wrapper_attributes(
 	)
 );
 
-$share_link  = '<li ' . $wrapper_attributes . '>';
-$share_link .= '<a href="' . $url . '" aria-label="' . esc_attr( $label ) . '" ' . $rel_target_attributes . ' class="wp-block-outermost-social-sharing-link-anchor">';
-$share_link .= $icon;
-$share_link .= '<span class="wp-block-outermost-social-sharing-link-label' . ( $show_labels ? '' : ' screen-reader-text' ) . '">';
-$share_link .= esc_html( $label );
-$share_link .= '</span></a></li>';
-
-echo esc_html( $share_link );
+?>
+<li <?php echo $wrapper_attributes; ?>>
+    <a href="<?php echo $url; ?>" aria-label="<?php echo esc_attr( $label ); ?>" <?php echo $rel_target_attributes; ?> class="wp-block-outermost-social-sharing-link-anchor">
+        <?php echo $icon; ?>
+        <span class="wp-block-outermost-social-sharing-link-label<?php echo ( $show_labels ? '' : ' screen-reader-text' ); ?>">
+            <?php echo esc_html( $label ); ?>
+        </span>
+    </a>
+</li>

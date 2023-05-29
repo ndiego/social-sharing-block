@@ -5,6 +5,8 @@
  * @package Social Sharing Block
  */
 
+namespace SocialSharingLink;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -15,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @return String SVG Element for service icon.
  */
-function outermost_social_sharing_link_get_icon( $service, $services ) {
+function get_icon( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['icon'] ) ) {
 		return $services[ $service ]['icon'];
 	}
@@ -47,7 +49,7 @@ function outermost_social_sharing_link_get_label( $service, $services ) {
  *
  * @return String The service url.
  */
-function outermost_social_sharing_link_get_url( $service, $services ) {
+function get_url( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['url'] ) ) {
 		// The print service uses Javascript and should be escaped differently.
 		return 'print' === $service ? esc_js( $services[ $service ]['url'] ) : esc_url( $services[ $service ]['url'] );
@@ -64,7 +66,7 @@ function outermost_social_sharing_link_get_url( $service, $services ) {
  *
  * @return Array|String
  */
-function outermost_social_sharing_link_services( $share_custom_link, $block ) {
+function get_link_services( $share_custom_link, $block ) {
 
 	$custom_link = array_key_exists( 'url', $block->context ) ? $block->context['url'] : '';
 
@@ -199,7 +201,7 @@ function outermost_social_sharing_link_services( $share_custom_link, $block ) {
  *
  * @return String Inline CSS styles for link's icon and background colors.
  */
-function outermost_social_sharing_link_get_color_styles( $context ) {
+function get_color_styles( $context ) {
 	$styles = array();
 
 	if ( array_key_exists( 'iconColorValue', $context ) ) {
@@ -220,7 +222,7 @@ function outermost_social_sharing_link_get_color_styles( $context ) {
  *
  * @return String CSS classes for link's icon and background colors.
  */
-function outermost_social_sharing_link_get_color_classes( $context ) {
+function get_color_classes( $context ) {
 	$classes = array();
 
 	if ( array_key_exists( 'iconColor', $context ) ) {

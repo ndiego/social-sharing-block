@@ -3,11 +3,12 @@
   "apiVersion": 2,
   "name": "outermost/social-sharing-link",
   "title": "Social Sharing Link",
+  "category": "widgets",
+  "description": "Display an icon that shares the current page when clicked.",
   "parent": [
     "outermost/social-sharing"
   ],
-  "description": "Display an icon that shares the current page when clicked.",
-  "textdomain": "social-sharing",
+  "textdomain": "social-sharing-block",
   "attributes": {
     "service": {
       "type": "string"
@@ -30,6 +31,8 @@
     "reusable": false,
     "html": false
   },
-  "editorScript": "outermost-social-sharing-scripts",
-  "editorStyle": "file:./../../editor.css"
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
 }

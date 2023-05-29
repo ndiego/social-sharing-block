@@ -16,6 +16,11 @@ import {
 import { __, sprintf } from '@wordpress/i18n';
 
 /**
+ * Import editor-only block styles.
+ */
+import './editor.scss';
+
+/**
  * Internal dependencies
  */
 import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';

@@ -2,42 +2,34 @@
  * External dependencies
  */
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 const { escapeRegExp } = require( 'lodash' );
 const { join, sep } = require( 'path' );
-const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
 module.exports = {
 	...defaultConfig,
 
-	entry: {
-		'index' : path.resolve( process.cwd(), 'src/index.js' ),
-		'style' : path.resolve( process.cwd(), 'src/index.scss' ),
-		'editor': path.resolve( process.cwd(), 'src/editor.scss' ),
-	},
-
 	plugins: [
 		...defaultConfig.plugins,
 
-		new RemoveEmptyScriptsPlugin(),
+		// Copy utility files to build.
 		new CopyWebpackPlugin( {
 			patterns: [].concat(
 				Object.entries( {
-					'src': 'blocks/',
+					'src': '',
 				} ).flatMap( ( [ from, to ] ) => [
 					{
-						from: `${ from }/**/index.php`,
+						from: `${ from }/**/utils.php`,
 						to( { absoluteFilename } ) {
 							const [ , dirname ] = absoluteFilename.match(
 								new RegExp(
 									`([\\w-]+)${ escapeRegExp(
 										sep
-									) }index\\.php$`
+									) }utils\\.php$`
 								)
 							);
 
-							return join( to, `${ dirname }.php` );
+							return join( to, `${ dirname }/utils.php` );
 						},
 						noErrorOnMissing: true,
 					},

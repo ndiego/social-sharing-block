@@ -1,65 +1,11 @@
 <?php
 /**
- * Server-side rendering of the `outermost/social-sharing-link` block.
+ * Utility functions for the `outermost/social-sharing-link` block.
  *
  * @package Social Sharing Block
  */
 
-/**
- * Renders the `outermost/social-sharing-link` block on server.
- *
- * @param Array    $attributes The block attributes.
- * @param String   $content    InnerBlocks content of the Block.
- * @param WP_Block $block      Block object.
- *
- * @return String Rendered HTML of the referenced block.
- */
-function outermost_social_sharing_link_render_block( $attributes, $content, $block ) { // phpcs:ignore
-	$share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $block->context['shareCustomLink'] : false;
-	$service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
-	$services          = outermost_social_sharing_link_services( $share_custom_link, $block );
-	$url               = outermost_social_sharing_link_get_url( $service, $services );
-	$label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : outermost_social_sharing_link_get_label( $service, $services );
-	$show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
-	$class_name        = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : false;
-
-	$rel_target_attributes = '';
-
-	if ( 'print' !== $service && 'mail' !== $service ) {
-		$rel_target_attributes = 'rel="noopener nofollow" target="_blank"';
-	}
-
-	$icon               = outermost_social_sharing_link_get_icon( $service, $services );
-	$wrapper_attributes = get_block_wrapper_attributes(
-		array(
-			'class' => 'outermost-social-sharing-link outermost-social-sharing-link-' . $service . $class_name . outermost_social_sharing_link_get_color_classes( $block->context ),
-			'style' => outermost_social_sharing_link_get_color_styles( $block->context ),
-		)
-	);
-
-	$link  = '<li ' . $wrapper_attributes . '>';
-	$link .= '<a href="' . $url . '" aria-label="' . esc_attr( $label ) . '" ' . $rel_target_attributes . ' class="wp-block-outermost-social-sharing-link-anchor">';
-	$link .= $icon;
-	$link .= '<span class="wp-block-outermost-social-sharing-link-label' . ( $show_labels ? '' : ' screen-reader-text' ) . '">';
-	$link .= esc_html( $label );
-	$link .= '</span></a></li>';
-
-	return $link;
-}
-
-/**
- * Registers the `outermost/social-sharing-link` block on the server.
- */
-function outermost_social_sharing_link_register_block() {
-	register_block_type_from_metadata(
-		__DIR__ . '/social-sharing-link',
-		array(
-			'render_callback' => 'outermost_social_sharing_link_render_block',
-		)
-	);
-}
-add_action( 'init', 'outermost_social_sharing_link_register_block' );
-
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Returns the SVG for Social Sharing Link.

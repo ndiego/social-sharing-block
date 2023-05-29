@@ -11,7 +11,7 @@
     "links",
     "share"
   ],
-  "textdomain": "social-sharing",
+  "textdomain": "social-sharing-block",
   "attributes": {
     "iconColor": {
       "type": "string"
@@ -70,16 +70,27 @@
     "__experimentalLayout": {
       "allowSwitching": false,
       "allowInheriting": false,
+      "allowVerticalAlignment": false,
       "default": {
         "type": "flex"
       }
     },
+    "color": {
+      "enableContrastChecker": false,
+      "background": true,
+      "gradients": true,
+      "text": false,
+      "__experimentalDefaultControls": {
+        "background": false
+      }
+    },
     "spacing": {
-      "blockGap": true,
-      "margin": [
-        "top",
-        "bottom"
+      "blockGap": [
+        "horizontal",
+        "vertical"
       ],
+      "margin": true,
+      "padding": true,
       "units": [
         "px",
         "em",
@@ -107,7 +118,7 @@
       "label": "Pill Shape"
     }
   ],
-  "editorScript": "outermost-social-sharing-scripts",
-  "editorStyle": "file:./../../editor.css",
-  "style": "file:./../../style.css"
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
 }

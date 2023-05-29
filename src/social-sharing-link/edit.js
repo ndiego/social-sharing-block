@@ -37,10 +37,11 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 
 	const classes = classnames(
 		'outermost-social-sharing-link',
-		'outermost-social-sharing-link-' + service, {
+		'outermost-social-sharing-link-' + service,
+		{
 			[ `has-${ iconColor }-color` ]: iconColor,
 			[ `has-${ iconBackgroundColor }-background-color` ]:
-			iconBackgroundColor,
+				iconBackgroundColor,
 		}
 	);
 

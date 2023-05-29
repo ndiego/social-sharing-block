@@ -193,7 +193,8 @@ export function SocialSharingEdit( props ) {
 	const colorGradientSettings = useMultipleOriginColorsAndGradients();
 
 	// In WordPress <=6.2 this will return null, so default to true in those cases.
-	const hasColorsOrGradients = colorGradientSettings?.hasColorsOrGradients ?? true;
+	const hasColorsOrGradients =
+		colorGradientSettings?.hasColorsOrGradients ?? true;
 
 	const isURLSet = !! url;
 
@@ -303,9 +304,14 @@ export function SocialSharingEdit( props ) {
 					/>
 					<ToggleControl
 						checked={ shareCustomLink }
-						label={ __( 'Share custom link', 'social-sharing-block' ) }
+						label={ __(
+							'Share custom link',
+							'social-sharing-block'
+						) }
 						onChange={ () =>
-							setAttributes( { shareCustomLink: ! shareCustomLink } )
+							setAttributes( {
+								shareCustomLink: ! shareCustomLink,
+							} )
 						}
 					/>
 					{ shareCustomLink && (

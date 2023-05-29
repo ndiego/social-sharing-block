@@ -16,6 +16,11 @@ import {
 import { __, sprintf } from '@wordpress/i18n';
 
 /**
+ * Import editor-only block styles.
+ */
+import './editor.scss';
+
+/**
  * Internal dependencies
  */
 import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
@@ -32,10 +37,11 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 
 	const classes = classnames(
 		'outermost-social-sharing-link',
-		'outermost-social-sharing-link-' + service, {
+		'outermost-social-sharing-link-' + service,
+		{
 			[ `has-${ iconColor }-color` ]: iconColor,
 			[ `has-${ iconBackgroundColor }-background-color` ]:
-			iconBackgroundColor,
+				iconBackgroundColor,
 		}
 	);
 

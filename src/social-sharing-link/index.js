@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { external as icon } from '@wordpress/icons';
+import { registerBlockType } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
@@ -11,11 +12,13 @@ import metadata from './block.json';
 import variations from './variations';
 
 const { name } = metadata;
-
-export { metadata, name };
-
-export const settings = {
+const settings = {
 	icon,
 	edit,
 	variations,
 };
+
+/**
+ * Register the Social Sharing Link block.
+ */
+registerBlockType( { name, ...metadata }, settings );

@@ -34,6 +34,11 @@ import { useMergeRefs } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
 import { check, link, linkOff } from '@wordpress/icons';
 
+/**
+ * Import editor-only block styles.
+ */
+import './editor.scss';
+
 const ALLOWED_BLOCKS = [ 'outermost/social-sharing-link' ];
 
 const sizeOptions = [
@@ -83,8 +88,7 @@ export function SocialSharingEdit( props ) {
 	const [ popoverAnchor, setPopoverAnchor ] = useState( null );
 
 	// Remove icon background color if logos only style selected.
-	const logosOnly =
-		attributes.className?.indexOf( 'is-style-logos-only' ) >= 0;
+	const logosOnly = attributes.className?.includes( 'is-style-logos-only' );
 
 	const blockRef = useRef();
 	const backgroundBackupRef = useRef( {} );
@@ -189,7 +193,8 @@ export function SocialSharingEdit( props ) {
 	const colorGradientSettings = useMultipleOriginColorsAndGradients();
 
 	// In WordPress <=6.2 this will return null, so default to true in those cases.
-	const hasColorsOrGradients = colorGradientSettings?.hasColorsOrGradients ?? true;
+	const hasColorsOrGradients =
+		colorGradientSettings?.hasColorsOrGradients ?? true;
 
 	const isURLSet = !! url;
 
@@ -299,9 +304,14 @@ export function SocialSharingEdit( props ) {
 					/>
 					<ToggleControl
 						checked={ shareCustomLink }
-						label={ __( 'Share custom link', 'social-sharing-block' ) }
+						label={ __(
+							'Share custom link',
+							'social-sharing-block'
+						) }
 						onChange={ () =>
-							setAttributes( { shareCustomLink: ! shareCustomLink } )
+							setAttributes( {
+								shareCustomLink: ! shareCustomLink,
+							} )
 						}
 					/>
 					{ shareCustomLink && (

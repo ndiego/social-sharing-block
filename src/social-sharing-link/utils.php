@@ -1,65 +1,13 @@
 <?php
 /**
- * Server-side rendering of the `outermost/social-sharing-link` block.
+ * Utility functions for the `outermost/social-sharing-link` block.
  *
  * @package Social Sharing Block
  */
 
-/**
- * Renders the `outermost/social-sharing-link` block on server.
- *
- * @param Array    $attributes The block attributes.
- * @param String   $content    InnerBlocks content of the Block.
- * @param WP_Block $block      Block object.
- *
- * @return String Rendered HTML of the referenced block.
- */
-function outermost_social_sharing_link_render_block( $attributes, $content, $block ) { // phpcs:ignore
-	$share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $block->context['shareCustomLink'] : false;
-	$service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
-	$services          = outermost_social_sharing_link_services( $share_custom_link, $block );
-	$url               = outermost_social_sharing_link_get_url( $service, $services );
-	$label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : outermost_social_sharing_link_get_label( $service, $services );
-	$show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
-	$class_name        = isset( $attributes['className'] ) ? ' ' . $attributes['className'] : false;
+namespace SocialSharingLink;
 
-	$rel_target_attributes = '';
-
-	if ( 'print' !== $service && 'mail' !== $service ) {
-		$rel_target_attributes = 'rel="noopener nofollow" target="_blank"';
-	}
-
-	$icon               = outermost_social_sharing_link_get_icon( $service, $services );
-	$wrapper_attributes = get_block_wrapper_attributes(
-		array(
-			'class' => 'outermost-social-sharing-link outermost-social-sharing-link-' . $service . $class_name . outermost_social_sharing_link_get_color_classes( $block->context ),
-			'style' => outermost_social_sharing_link_get_color_styles( $block->context ),
-		)
-	);
-
-	$link  = '<li ' . $wrapper_attributes . '>';
-	$link .= '<a href="' . $url . '" aria-label="' . esc_attr( $label ) . '" ' . $rel_target_attributes . ' class="wp-block-outermost-social-sharing-link-anchor">';
-	$link .= $icon;
-	$link .= '<span class="wp-block-outermost-social-sharing-link-label' . ( $show_labels ? '' : ' screen-reader-text' ) . '">';
-	$link .= esc_html( $label );
-	$link .= '</span></a></li>';
-
-	return $link;
-}
-
-/**
- * Registers the `outermost/social-sharing-link` block on the server.
- */
-function outermost_social_sharing_link_register_block() {
-	register_block_type_from_metadata(
-		__DIR__ . '/social-sharing-link',
-		array(
-			'render_callback' => 'outermost_social_sharing_link_render_block',
-		)
-	);
-}
-add_action( 'init', 'outermost_social_sharing_link_register_block' );
-
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Returns the SVG for Social Sharing Link.
@@ -69,7 +17,7 @@ add_action( 'init', 'outermost_social_sharing_link_register_block' );
  *
  * @return String SVG Element for service icon.
  */
-function outermost_social_sharing_link_get_icon( $service, $services ) {
+function get_icon( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['icon'] ) ) {
 		return $services[ $service ]['icon'];
 	}
@@ -85,7 +33,7 @@ function outermost_social_sharing_link_get_icon( $service, $services ) {
  *
  * @return String The service label.
  */
-function outermost_social_sharing_link_get_label( $service, $services ) {
+function get_label( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['label'] ) ) {
 		return $services[ $service ]['label'];
 	}
@@ -101,13 +49,13 @@ function outermost_social_sharing_link_get_label( $service, $services ) {
  *
  * @return String The service url.
  */
-function outermost_social_sharing_link_get_url( $service, $services ) {
+function get_url( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['url'] ) ) {
 		// The print service uses Javascript and should be escaped differently.
 		return 'print' === $service ? esc_js( $services[ $service ]['url'] ) : esc_url( $services[ $service ]['url'] );
 	}
 
-	return $services['mail']['url'];
+	return esc_url( $services['mail']['url'] );
 }
 
 /**
@@ -118,7 +66,7 @@ function outermost_social_sharing_link_get_url( $service, $services ) {
  *
  * @return Array|String
  */
-function outermost_social_sharing_link_services( $share_custom_link, $block ) {
+function get_link_services( $share_custom_link, $block ) {
 
 	$custom_link = array_key_exists( 'url', $block->context ) ? $block->context['url'] : '';
 
@@ -253,7 +201,7 @@ function outermost_social_sharing_link_services( $share_custom_link, $block ) {
  *
  * @return String Inline CSS styles for link's icon and background colors.
  */
-function outermost_social_sharing_link_get_color_styles( $context ) {
+function get_color_styles( $context ) {
 	$styles = array();
 
 	if ( array_key_exists( 'iconColorValue', $context ) ) {
@@ -274,7 +222,7 @@ function outermost_social_sharing_link_get_color_styles( $context ) {
  *
  * @return String CSS classes for link's icon and background colors.
  */
-function outermost_social_sharing_link_get_color_classes( $context ) {
+function get_color_classes( $context ) {
 	$classes = array();
 
 	if ( array_key_exists( 'iconColor', $context ) ) {

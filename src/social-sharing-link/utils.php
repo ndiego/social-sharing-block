@@ -55,7 +55,7 @@ function get_url( $service, $services ) {
 		return 'print' === $service ? esc_js( $services[ $service ]['url'] ) : esc_url( $services[ $service ]['url'] );
 	}
 
-	return $services['mail']['url'];
+	return esc_url( $services['mail']['url'] );
 }
 
 /**

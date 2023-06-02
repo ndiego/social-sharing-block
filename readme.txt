@@ -12,7 +12,7 @@ Effortlessly add social share icons to your website.
 
 == Description ==
 
-A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels.
+A simple little WordPress block that allows you to add social share icons to your website. Choose from 15+ of the most popular social channels.
 
 Share options include:
 
@@ -64,7 +64,7 @@ Share options include:
 
 == Changelog ==
 
-= 0.7.0 - 2023-05-29 =
+= 0.7.0 - 2023-06-02 =
 
 **Added**
 

@@ -4,7 +4,7 @@
 
 ![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/.wordpress-org/banner-1544x500.png)
 
-A simple little block that allows you to add social share icons to the Block Editor. Choose from 15+ of the most popular social channels. [Download on WordPress.org](https://wordpress.org/plugins/social-sharing-block/)
+A simple little WordPress block that allows you to add social share icons to your website. Choose from 15+ of the most popular social channels. [Download on WordPress.org](https://wordpress.org/plugins/social-sharing-block/)
 
 ### Sharing Options
 

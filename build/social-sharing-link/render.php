@@ -16,6 +16,7 @@ $share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $b
 $service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
 $services          = get_link_services( $share_custom_link, $block );
 $label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : get_label( $service, $services );
+$phone             = ( isset( $attributes['phone'] ) ) ? $attributes['phone'] : null;
 $show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
 
 $rel_target_attributes = '';
@@ -33,7 +34,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 
 ?>
 <li <?php echo $wrapper_attributes; ?>>
-	<a href="<?php echo get_url( $service, $services ); ?>" aria-label="<?php echo esc_attr( $label ); ?>" <?php echo $rel_target_attributes; ?> class="wp-block-outermost-social-sharing-link-anchor">
+	<a href="<?php echo get_url( $service, $services, $phone ); ?>" aria-label="<?php echo esc_attr( $label ); ?>" <?php echo $rel_target_attributes; ?> class="wp-block-outermost-social-sharing-link-anchor">
 		<?php echo get_icon( $service, $services ); ?>
 		<span class="wp-block-outermost-social-sharing-link-label <?php echo ( $show_labels ? '' : 'screen-reader-text' ); ?>">
 			<?php echo esc_html( $label ); ?>

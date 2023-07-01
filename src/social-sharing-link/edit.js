@@ -26,7 +26,7 @@ import './editor.scss';
 import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
 
 const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
-	const { service, label } = attributes;
+	const { service, label, phone } = attributes;
 	const {
 		showLabels,
 		iconColor,
@@ -83,6 +83,20 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 							}
 						/>
 					</PanelRow>
+					{ service === 'whatsapp' &&
+					<PanelRow>
+						<TextControl
+							label={ __(
+								'Phone number',
+								'social-sharing-block'
+							) }
+							value={ phone }
+							onChange={ ( value ) =>
+								setAttributes( { phone: value } )
+							}
+						/>
+					</PanelRow>
+					}
 				</PanelBody>
 			</InspectorControls>
 			<li { ...blockProps }>

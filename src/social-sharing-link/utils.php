@@ -49,15 +49,20 @@ function get_label( $service, $services ) {
  *
  * @return String The service url.
  */
-function get_url( $service, $services ) {
+function get_url( $service, $services, $phone = null ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['url'] ) ) {
+		$url = $services[ $service ]['url'];
+
+		if ( $service === 'whatsapp' && $phone ) {
+			$url .= '&phone=' . $phone;
+		}
 
 		// The print service uses Javascript and should be escaped differently,
 		// and Viber has a strange share URL that gets stripped by esc_attr.
 		if ( 'print' === $service || 'viber' === $service ) {
-			return esc_js( $services[ $service ]['url'] );
+			return esc_js( $url );
 		} else {
-			return esc_url( $services[ $service ]['url'] );
+			return esc_url( $url );
 		}
 	}
 

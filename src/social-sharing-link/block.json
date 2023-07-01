@@ -13,7 +13,10 @@
         },
         "label": {
             "type": "string"
-        }
+        },
+		"phone": {
+		  "type": "string"
+		}
     },
     "usesContext": [
 		"iconBackgroundColor",

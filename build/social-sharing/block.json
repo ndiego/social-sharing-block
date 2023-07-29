@@ -107,14 +107,22 @@
         "vw"
       ],
       "__experimentalDefaultControls": {
-        "blockGap": true
+        "blockGap": true,
+        "margin": false,
+        "padding": false
       }
     },
     "__experimentalBorder": {
       "color": true,
       "radius": true,
       "style": true,
-      "width": true
+      "width": true,
+      "__experimentalDefaultControls": {
+        "color": false,
+        "radius": false,
+        "style": false,
+        "width": false
+      }
     }
   },
   "styles": [

@@ -58,6 +58,14 @@
 		"align": [ "left", "center", "right" ],
 		"anchor": true,
 		"__experimentalExposeControlsToChildren": true,
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"allowVerticalAlignment": false,
+			"default": {
+				"type": "flex"
+			}
+		},
 		"__experimentalLayout": {
 			"allowSwitching": false,
 			"allowInheriting": false,

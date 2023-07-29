@@ -202,7 +202,7 @@ function get_link_services( $share_custom_link, $block ) {
 		),
 	);
 
-	return $services_data;
+	return apply_filters( 'social_sharing_block_services_data', $services_data, $block, $share_custom_link );
 }
 
 /**

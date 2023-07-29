@@ -64,6 +64,13 @@ Share options include:
 
 == Changelog ==
 
+= 0.8.0 - TBD =
+
+**Changed**
+
+- Update the WhatsApp icon to match the Social Icons block in Core.
+- Added new `layout` block support for 6.3 compatibility.
+
 = 0.7.0 - 2023-06-02 =
 
 **Added**

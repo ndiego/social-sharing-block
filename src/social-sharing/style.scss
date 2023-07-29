@@ -1,6 +1,7 @@
 .wp-block-outermost-social-sharing {
 	// Required for when social share icons are oriented vertically.
 	align-items: flex-start;
+	box-sizing: border-box;
 	padding-left: 0;
 	padding-right: 0;
 	// Some themes set text-indent on all <ul>

@@ -75,7 +75,7 @@ Share options include:
 
 **Changed**
 
-* Update minimum required WordPress veriosn to 6.2. We want to be utilizing the latest functionality in WordPress.
+* Update minimum required WordPress version to 6.2. We want to be utilizing the latest functionality in WordPress.
 * Change the color picker component to integrated better with Core.
 
 **Fixed**
@@ -90,8 +90,8 @@ Share options include:
 
 **Changed**
 
-* Updated Reddit icon to match brand guidelines.
-* Simplified icons SVGs to reduce plugin size.
+* Update Reddit icon to match brand guidelines.
+* Simplify icon SVGs to reduce plugin size.
 
 = 0.5.0 - 2022-08-05 =
 

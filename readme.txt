@@ -2,9 +2,9 @@
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
 Requires at least: 6.2
-Tested up to:      6.2
+Tested up to:      6.3
 Requires PHP:      7.0
-Stable tag:        0.7.0
+Stable tag:        0.8.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,12 +64,18 @@ Share options include:
 
 == Changelog ==
 
-= 0.8.0 - TBD =
+= 0.8.0 - 2023-07-29 =
+
+**Added**
+
+- Add border support.
+- Add the [`social_sharing_block_services_data`](https://github.com/ndiego/social-sharing-block/blob/a36b3248ccf11a9e842c41991c1fb1e7820de39e/src/social-sharing-link/utils.php#L205) filter allowing you to modify service information on the frontend.
 
 **Changed**
 
 - Update the WhatsApp icon to match the Social Icons block in Core.
-- Added new `layout` block support for 6.3 compatibility.
+- Update to the new `layout` block support for 6.3 compatibility.
+- Update block API version 3 for 6.3 compatibility.
 
 = 0.7.0 - 2023-06-02 =
 

@@ -124,6 +124,7 @@ const variations = [
 		name: 'x',
 		attributes: { service: 'x' },
 		title: 'X',
+		keywords: [ 'twitter' ],
 		icon: x,
 	},
 	// Deprecated now that Twitter is X.

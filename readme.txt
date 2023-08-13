@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 6.2
 Tested up to:      6.3
 Requires PHP:      7.0
-Stable tag:        0.8.0
+Stable tag:        0.9.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,9 +27,9 @@ Share options include:
 * SMS
 * Telegram
 * Tumblr
-* Twitter
 * Viber
 * WhatsApp
+* X
 * Email
 * Print
 
@@ -63,6 +63,16 @@ Share options include:
 3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
 
 == Changelog ==
+
+= 0.9.0 - 2023-08-13 =
+
+**Changed**
+
+- Changed Twitter to X.
+
+**Fixed**
+
+- Fixed deprecation warning. Thanks @kafleg for reporting [the issue](https://wordpress.org/support/topic/deprecated-57/).
 
 = 0.8.0 - 2023-07-29 =
 

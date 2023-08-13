@@ -4,7 +4,7 @@
  * Description:       Effortlessly add social share icons to your website.
  * Requires at least: 6.2
  * Requires PHP:      7.0
- * Version:           0.8.0
+ * Version:           0.9.0
  * Author:            Nick Diego
  * Author URI:        https://www.nickdiego.com
  * License:           GPL-2.0-or-later

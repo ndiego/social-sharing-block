@@ -26,7 +26,7 @@ const settings = {
 			},
 			{
 				name: 'outermost/social-sharing-link',
-				attributes: { service: 'twitter' },
+				attributes: { service: 'x' },
 			},
 			{
 				name: 'outermost/social-sharing-link',

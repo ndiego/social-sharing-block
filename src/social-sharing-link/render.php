@@ -18,6 +18,11 @@ $services          = get_link_services( $share_custom_link, $block );
 $label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : get_label( $service, $services );
 $show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
 
+// Transition Twitter to X.
+if ( 'twitter' === $service ) {
+	$service = 'x';
+}
+
 $rel_target_attributes = '';
 
 if ( 'print' !== $service && 'mail' !== $service ) {

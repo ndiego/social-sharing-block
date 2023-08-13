@@ -12,7 +12,7 @@ import { __, sprintf } from '@wordpress/i18n';
  * Internal dependencies
  */
 import variations from './variations';
-import { MailIcon } from './icons';
+import { mail } from './icons';
 
 /**
  * Retrieves the social service's icon component.
@@ -22,22 +22,13 @@ import { MailIcon } from './icons';
  * @return {WPComponent} Icon component for social service.
  */
 export const getIconBySite = ( name ) => {
-	const variation = find( variations, { name } );
-	return variation ? variation.icon : MailIcon;
-};
+	// Transition Twitter to X
+	if ( 'twitter' === name ) {
+		return find( variations, { name: 'x' } ).icon;
+	}
 
-/**
- * Retrieves the display name for the social service.
- *
- * @param {string} name key for a social service (lowercase slug)
- *
- * @return {string} Display name for social service
- */
-export const getNameBySite = ( name ) => {
 	const variation = find( variations, { name } );
-	return variation
-		? variation.title
-		: __( 'Email this Page', 'social-sharing-block' );
+	return variation ? variation.icon : mail;
 };
 
 /**
@@ -48,6 +39,11 @@ export const getNameBySite = ( name ) => {
  * @return {string} Display label for social service
  */
 export const getLabelBySite = ( name ) => {
+	// Transition Twitter to X
+	if ( 'twitter' === name ) {
+		return __( 'X', 'social-sharing-block' );
+	}
+
 	const variation = find( variations, { name } );
 
 	if ( ! variation ) {

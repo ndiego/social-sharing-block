@@ -6,6 +6,7 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
+import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import {
 	Button,
@@ -13,7 +14,6 @@ import {
 	PanelRow,
 	TextControl,
 } from '@wordpress/components';
-import { __, sprintf } from '@wordpress/i18n';
 
 /**
  * Import editor-only block styles.
@@ -23,7 +23,7 @@ import './editor.scss';
 /**
  * Internal dependencies
  */
-import { getIconBySite, getNameBySite, getLabelBySite } from './social-list';
+import { getIconBySite, getLabelBySite } from './social-list';
 
 const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 	const { service, label } = attributes;
@@ -45,8 +45,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 		}
 	);
 
-	const IconComponent = getIconBySite( service );
-	const socialLinkName = getNameBySite( service );
+	const icon = getIconBySite( service );
 	const socialLinkLabel = label ? label : getLabelBySite( service );
 	const blockProps = useBlockProps( {
 		className: classes,
@@ -60,12 +59,8 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={ sprintf(
-						/* translators: %s: name of the social service. */
-						__( '%s settings', 'social-sharing-block' ),
-						socialLinkName
-					) }
-					initialOpen={ false }
+					title={ __( 'Settings', 'social-sharing-block' ) }
+					initialOpen={ true }
 				>
 					<PanelRow>
 						<TextControl
@@ -87,7 +82,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 			</InspectorControls>
 			<li { ...blockProps }>
 				<Button className="wp-block-outermost-social-sharing-link-anchor">
-					<IconComponent />
+					{ icon }
 					<span
 						className={ classnames(
 							'wp-block-outermost-social-sharing-link-label',

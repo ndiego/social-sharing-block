@@ -14,9 +14,9 @@ import {
 	InspectorControls,
 	ContrastChecker,
 	withColors,
-	__experimentalColorGradientSettingsDropdown as ColorGradientSettingsDropdown,
-	__experimentalUseMultipleOriginColorsAndGradients as useMultipleOriginColorsAndGradients,
-	__experimentalLinkControl as LinkControl,
+	__experimentalColorGradientSettingsDropdown as ColorGradientSettingsDropdown, // eslint-disable-line
+	__experimentalUseMultipleOriginColorsAndGradients as useMultipleOriginColorsAndGradients, // eslint-disable-line
+	__experimentalLinkControl as LinkControl, // eslint-disable-line
 } from '@wordpress/block-editor';
 import {
 	MenuGroup,

@@ -109,7 +109,7 @@ function get_link_services( $share_custom_link, $block ) {
 
 		$permalink = rawurlencode( get_the_permalink() );
 		$title     = rawurlencode( get_the_title() );
-		$image     = rawurlencode( esc_url( $thumbnail ) );
+		$image     = $thumbnail ? rawurlencode( esc_url( $thumbnail ) ) : null;
 	}
 
 	$separator       = '%20&mdash;%20';

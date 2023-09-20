@@ -23,9 +23,9 @@ import './editor.scss';
 /**
  * Internal dependencies
  */
-import { getIconBySite, getLabelBySite } from './social-list';
+import { useVariationIcon, useVariationLabel } from './social-list';
 
-const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
+const SocialSharingLinkEdit = ({ attributes, context, setAttributes }) => {
 	const { service, label } = attributes;
 	const {
 		showLabels,
@@ -39,59 +39,56 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 		'outermost-social-sharing-link',
 		'outermost-social-sharing-link-' + service,
 		{
-			[ `has-${ iconColor }-color` ]: iconColor,
-			[ `has-${ iconBackgroundColor }-background-color` ]:
+			[`has-${iconColor}-color`]: iconColor,
+			[`has-${iconBackgroundColor}-background-color`]:
 				iconBackgroundColor,
 		}
 	);
 
-	const icon = getIconBySite( service );
-	const socialLinkLabel = label ? label : getLabelBySite( service );
-	const blockProps = useBlockProps( {
+	const icon = useVariationIcon(attributes);
+	const socialLinkLabel = useVariationLabel(attributes);
+	const blockProps = useBlockProps({
 		className: classes,
 		style: {
 			color: iconColorValue,
 			backgroundColor: iconBackgroundColorValue,
 		},
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody
-					title={ __( 'Settings', 'social-sharing-block' ) }
-					initialOpen={ true }
+					title={__('Settings', 'social-sharing-block')}
+					initialOpen={true}
 				>
 					<PanelRow>
 						<TextControl
-							label={ __(
-								'Share label',
-								'social-sharing-block'
-							) }
-							help={ __(
+							label={__('Share label', 'social-sharing-block')}
+							help={__(
 								'Briefly describe the share link to help screen reader users.',
 								'social-sharing-block'
-							) }
-							value={ label }
-							onChange={ ( value ) =>
-								setAttributes( { label: value } )
+							)}
+							value={label}
+							onChange={(value) =>
+								setAttributes({ label: value })
 							}
 						/>
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<li { ...blockProps }>
+			<li {...blockProps}>
 				<Button className="wp-block-outermost-social-sharing-link-anchor">
-					{ icon }
+					{icon}
 					<span
-						className={ classnames(
+						className={classnames(
 							'wp-block-outermost-social-sharing-link-label',
 							{
-								'screen-reader-text': ! showLabels,
+								'screen-reader-text': !showLabels,
 							}
-						) }
+						)}
 					>
-						{ socialLinkLabel }
+						{socialLinkLabel}
 					</span>
 				</Button>
 			</li>

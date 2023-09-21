@@ -23,7 +23,7 @@ import './editor.scss';
 /**
  * Internal dependencies
  */
-import { useVariationIcon, useVariationLabel } from './social-list';
+import { useSocialService } from './social-list';
 
 const SocialSharingLinkEdit = ({ attributes, context, setAttributes }) => {
 	const { service, label } = attributes;
@@ -45,8 +45,8 @@ const SocialSharingLinkEdit = ({ attributes, context, setAttributes }) => {
 		}
 	);
 
-	const icon = useVariationIcon(attributes);
-	const socialLinkLabel = useVariationLabel(attributes);
+	const { icon, label: socialLinkLabel } = useSocialService(attributes);
+
 	const blockProps = useBlockProps({
 		className: classes,
 		style: {

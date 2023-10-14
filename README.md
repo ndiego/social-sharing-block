@@ -41,11 +41,9 @@ A simple little WordPress block that allows you to add social share icons to you
 
 ## Development
 
-1. Set up a local WordPress development environment.
-2. Clone / download this repository into the `wp-content/plugins` folder.
-3. Navigate to the `wp-content/plugins/social-sharing-block` folder in the command line.
-4. Run `npm install` to install the plugin's dependencies within a `/node_modules/` folder.
-5. Run `composer install` to install the additional WordPress composer tools within a `/vendor/` folder.
-6. Run `npm run start` to compile and watch source files for changes while developing.
+1. Run `npm install` to install the plugin's dependencies within a `/node_modules/` folder.
+2. Run `composer install` to install the additional WordPress composer tools within a `/vendor/` folder.
+3. Make sure you have Docker installed and run `npm run dev:start`. This will startup an integrated local development environment. See [@wordpress/env documentation](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) for details.
+4. Run `npm run start` to compile and watch source files for changes while developing.
 
 Refer to `package.json` and `composer.json` for additional commands.

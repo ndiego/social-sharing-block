@@ -2,9 +2,9 @@
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
 Requires at least: 6.2
-Tested up to:      6.3
+Tested up to:      6.4
 Requires PHP:      7.0
-Stable tag:        0.9.0
+Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,7 +40,7 @@ Share options include:
 * No block library required 🎉
 * Built almost entirely with native WordPress components
 * Will get additional functionality as it's added to WordPress core (margin, borders, responsive controls etc.)
-* Plugin is intentionally light weight and adds no frontend JavaScript files.
+* Plugin is intentionally lightweight and adds no frontend JavaScript files.
 
 === Stay Connected ===
 
@@ -51,18 +51,26 @@ Share options include:
 
 1. You have a couple options:
 	* Go to Plugins &rarr; Add New and search for "Social Sharing Block". Once found, click "Install".
-	* Download the Social Sharing Block plugin from wordpress.org and make sure the folder us zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
-    * Open the block inserter within the Block Editor (Gutenberg) and search for "icon". The plugin should appear and allow you to it install directly. Skip steps 2 and 3.
+	* Download the Social Sharing Block plugin from wordpress.org and make sure the folder is zipped. Then upload via Plugins &rarr; Add New &rarr; Upload.
+    * Open the block inserter within the Block Editor (Gutenberg) and search for "icon". The plugin should appear and allow you to install it directly. Skip steps 2 and 3.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Search for the block within the Block Editor (Gutenberg) and begin using.
+3. Search for the block within the Block Editor (Gutenberg) and begin using the block.
 
 == Screenshots ==
 
 1. Social icons default to their appropriate brand colors. Easily choose your own icon and background colors using the block controls.
-2. The Social Sharing Block include three different styles and the ability to show/hide labels.
-3. Effortlessly configure social icons to suite your needs with extensive layout, orientation, and size controls.
+2. The Social Sharing Block includes three different styles and the ability to show/hide labels.
+3. Effortlessly configure social icons with extensive layout, orientation, and size controls to suit your needs.
 
 == Changelog ==
+
+= 1.0.0 - 2024-01-02 =
+
+**Fixed**
+
+- The correct icon and label are now displayed in the Editor when registering a custom block variation for a new social service. Thanks @gaambo for helping resolve [this issue](https://github.com/ndiego/social-sharing-block/pull/23).
+- Custom labels are now displayed in the Editor when set. 
+- The default label will now be shown on the front end when a custom label is empty.
 
 = 0.9.0 - 2023-08-13 =
 
@@ -99,7 +107,7 @@ Share options include:
 **Changed**
 
 * Update minimum required WordPress version to 6.2. We want to be utilizing the latest functionality in WordPress.
-* Change the color picker component to integrated better with Core.
+* Change the color picker component to integrate better with Core.
 
 **Fixed**
 

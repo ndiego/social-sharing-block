@@ -32,7 +32,7 @@ A simple little WordPress block that allows you to add social share icons to you
 - No block library required 🎉
 - Built almost entirely with native WordPress components
 - Will get additional functionality as it's added to WordPress core (margin, borders, responsive controls etc.)
-- Plugin is intentionally light weight and adds no frontend JavaScript files.
+- Plugin is intentionally lightweight and adds no frontend JavaScript files.
 
 ## Requirements
 

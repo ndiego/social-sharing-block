@@ -15,7 +15,7 @@ require_once dirname( __FILE__ ) . '/utils.php';
 $share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $block->context['shareCustomLink'] : false;
 $service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';
 $services          = get_link_services( $share_custom_link, $block );
-$label             = ( isset( $attributes['label'] ) ) ? $attributes['label'] : get_label( $service, $services );
+$label             = ( ! empty( $attributes['label'] ) ) ? $attributes['label'] : get_label( $service, $services );
 $show_labels       = array_key_exists( 'showLabels', $block->context ) ? $block->context['showLabels'] : false;
 
 // Transition Twitter to X.

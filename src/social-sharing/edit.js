@@ -108,7 +108,7 @@ export function SocialSharingEdit( props ) {
 		} else {
 			setAttributes( { ...backgroundBackupRef.current } );
 		}
-	}, [ logosOnly ] );
+	} );
 
 	// Handle keboard shortcuts for adding a custom link.
 	function onKeyDown( event ) {

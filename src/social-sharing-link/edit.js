@@ -14,6 +14,8 @@ import {
 	PanelRow,
 	TextControl,
 } from '@wordpress/components';
+import { store as blocksStore } from '@wordpress/blocks';
+import { useSelect } from '@wordpress/data';
 
 /**
  * Import editor-only block styles.
@@ -23,7 +25,7 @@ import './editor.scss';
 /**
  * Internal dependencies
  */
-import { getIconBySite, getLabelBySite } from './social-list';
+import { getSocialService } from './social-services';
 
 const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 	const { service, label } = attributes;
@@ -35,6 +37,16 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 		iconBackgroundColorValue,
 	} = context;
 
+	const activeVariation = useSelect(
+		( select ) => {
+			return select( blocksStore ).getActiveBlockVariation(
+				'outermost/social-sharing-link',
+				attributes
+			);
+		},
+		[ attributes ]
+	);
+
 	const classes = classnames(
 		'outermost-social-sharing-link',
 		'outermost-social-sharing-link-' + service,
@@ -45,8 +57,11 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 		}
 	);
 
-	const icon = getIconBySite( service );
-	const socialLinkLabel = label ? label : getLabelBySite( service );
+	const { icon, label: socialLinkLabel } = getSocialService(
+		service,
+		activeVariation
+	);
+
 	const blockProps = useBlockProps( {
 		className: classes,
 		style: {
@@ -91,7 +106,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 							}
 						) }
 					>
-						{ socialLinkLabel }
+						{ label || socialLinkLabel }
 					</span>
 				</Button>
 			</li>

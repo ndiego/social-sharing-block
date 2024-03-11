@@ -113,6 +113,7 @@ function get_link_services( $share_custom_link, $block ) {
 	}
 
 	$separator       = '%20&mdash;%20';
+	$title = str_replace('&#8211;', '-', $title); // Replace &#8211; with -. Prevents the title of the post to contain &#8211; instead of the proper - on social media. Tested on Twitter and Reddit.
 	$title_separator = $title ? $title . $separator : '';
 
 	$and_title_title      = $title ? '&title=' . $title : '';

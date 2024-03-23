@@ -10,6 +10,7 @@ export * from './reddit';
 export * from './skype';
 export * from './sms';
 export * from './telegram';
+export * from './threads';
 export * from './tumblr';
 export * from './viber';
 export * from './whatsapp';

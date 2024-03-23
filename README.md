@@ -1,8 +1,9 @@
 # Social Sharing Block
 
-[![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/social-share-block/blob/master/LICENSE.txt) ![WordPress Plugin Active Installs](https://img.shields.io/wordpress/plugin/installs/social-sharing-block?color=%23007cba&label=Active%20Installs&logo=wordpress&style=flat-square)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-blue.svg)](https://github.com/ndiego/social-share-block/blob/master/LICENSE.txt) ![Active Installs](https://img.shields.io/wordpress/plugin/installs/social-sharing-block?style=flat-square&logo=wordpress&logoColor=%23fff&label=Active%20Installs&labelColor=%231e1e1e&color=%231e1e1e) [![Playground Demo Link](https://img.shields.io/wordpress/plugin/v/social-sharing-block?style=flat-square&logo=wordpress&logoColor=%23fff&label=Playground%20Demo&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/blueprint.json)
 
-![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/.wordpress-org/banner-1544x500.png)
+
+![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/_wordpress-org/banner-1544x500.png)
 
 A simple little WordPress block that allows you to add social share icons to your website. Choose from 15+ of the most popular social channels. [Download on WordPress.org](https://wordpress.org/plugins/social-sharing-block/)
 

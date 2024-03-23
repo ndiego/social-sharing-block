@@ -18,6 +18,7 @@ A simple little WordPress block that allows you to add social share icons to you
 - Skype
 - SMS
 - Telegram
+- Threads
 - Tumblr
 - Viber
 - WhatsApp

@@ -26,6 +26,7 @@ Share options include:
 * Skype
 * SMS
 * Telegram
+* Threads
 * Tumblr
 * Viber
 * WhatsApp
@@ -63,6 +64,12 @@ Share options include:
 3. Effortlessly configure social icons with extensive layout, orientation, and size controls to suit your needs.
 
 == Changelog ==
+
+= = 1.1.0 - <DATE> =
+
+**Added**
+
+* Add support for Threads sharing. (props to @WatermarkBranding)
 
 = 1.0.0 - 2024-01-02 =
 

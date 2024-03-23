@@ -19,6 +19,7 @@ import {
 	skype,
 	sms,
 	telegram,
+	threads,
 	tumblr,
 	viber,
 	whatsapp,
@@ -100,6 +101,12 @@ const variations = [
 		attributes: { service: 'telegram' },
 		title: 'Telegram',
 		icon: telegram,
+	},
+	{
+		name: 'threads',
+		attributes: { service: 'threads' },
+		title: 'Threads',
+		icon: threads,
 	},
 	{
 		name: 'tumblr',

@@ -1,8 +1,8 @@
 === Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
-Requires at least: 6.2
-Tested up to:      6.4
+Requires at least: 6.3
+Tested up to:      6.5
 Requires PHP:      7.0
 Stable tag:        1.0.0
 License:           GPL-2.0-or-later
@@ -65,11 +65,19 @@ Share options include:
 
 == Changelog ==
 
-= = 1.1.0 - <DATE> =
+= = 1.1.0 - 2024-03-24 =
 
 **Added**
 
-* Add support for Threads sharing. (props to @WatermarkBranding)
+* Add support for Threads sharing. (props @WatermarkBranding)
+* Add dimension and border support to individual social sharing links. (props @TAjgriffin)
+* Add support for en and em dashes in post titles. (props @GeoSn0w)
+* Add Playground blueprint for live preview in the Plugin Directory.
+
+**Changed**
+
+* Bumped "Tested up to" to WordPress 6.5. 
+* Bumped "Requires at least" to WordPress 6.3.
 
 = 1.0.0 - 2024-01-02 =
 

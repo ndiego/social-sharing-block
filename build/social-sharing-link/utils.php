@@ -113,7 +113,7 @@ function get_link_services( $share_custom_link, $block ) {
 	}
 
 	$separator       = '%20&mdash;%20';
-	$title           = str_replace( [ '&#8211;', '&ndash;', '&#8212;', '&mdash;' ], [ '–', '–', '—', '—' ], $string ); // Replace encoded en and em dashes.
+	$title           = str_replace( [ '&#8211;', '&ndash;', '&#8212;', '&mdash;' ], [ '–', '–', '—', '—' ], $title ); // Replace encoded en and em dashes.
 	$title_separator = $title ? $title . $separator : '';
 
 	$and_title_title      = $title ? '&title=' . $title : '';

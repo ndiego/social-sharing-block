@@ -1,10 +1,10 @@
 {
-    "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
 	"features": {
 		"networking": true
 	},
 	"steps": [
-        {
+		{
 			"step": "login"
 		},
 		{
@@ -17,13 +17,13 @@
 				"activate": true
 			}
 		},
-        {
-            "step": "importFile",
-            "file": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/export.xml"
-            }
-        }
+		{
+			"step": "importFile",
+			"file": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/export.xml"
+			}
+		}
 	],
-    "landingPage": "/wp-admin/post.php?post=6&action=edit"
+	"landingPage": "/wp-admin/post.php?post=6&action=edit"
 }

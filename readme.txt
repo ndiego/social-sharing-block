@@ -65,11 +65,11 @@ Share options include:
 
 == Changelog ==
 
-= <VERSION> - <DATE> =
+= = 1.1.0 - <DATE> =
 
 **Added**
 
-* Add support for Threads sharing.
+* Add support for Threads sharing. (props to @WatermarkBranding)
 
 = 1.0.0 - 2024-01-02 =
 

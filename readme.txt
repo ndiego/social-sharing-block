@@ -76,8 +76,8 @@ Share options include:
 
 **Changed**
 
-* Bumped "Tested up to" to WordPress 6.5. 
-* Bumped "Requires at least" to WordPress 6.3.
+* Update "Tested up to" to WordPress 6.5. 
+* Update "Requires at least" to WordPress 6.3.
 
 = 1.0.0 - 2024-01-02 =
 

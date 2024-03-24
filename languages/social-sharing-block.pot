@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-23T18:03:37+00:00\n"
+"POT-Creation-Date: 2024-03-24T15:14:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: social-sharing-block\n"
@@ -30,73 +30,73 @@ msgstr ""
 msgid "https://www.nickdiego.com"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:125
+#: build/social-sharing-link/utils.php:129
 msgid "Share on Facebook"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:130
+#: build/social-sharing-link/utils.php:134
 msgid "Share on Flipboard"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:135
+#: build/social-sharing-link/utils.php:139
 msgid "Share on LINE"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:140
+#: build/social-sharing-link/utils.php:144
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:145
+#: build/social-sharing-link/utils.php:149
 #: build/social-sharing-link/index.js:2
 msgid "Email this Page"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:150
+#: build/social-sharing-link/utils.php:154
 msgid "Share on Pinterest"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:155
+#: build/social-sharing-link/utils.php:159
 msgid "Share on Pocket"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:160
+#: build/social-sharing-link/utils.php:164
 #: build/social-sharing-link/index.js:2
 msgid "Print this Page"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:165
+#: build/social-sharing-link/utils.php:169
 msgid "Share on Reddit"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:170
+#: build/social-sharing-link/utils.php:174
 msgid "Share on Skype"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:175
+#: build/social-sharing-link/utils.php:179
 msgid "Share on SMS"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:180
+#: build/social-sharing-link/utils.php:184
 msgid "Share on Telegram"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:185
+#: build/social-sharing-link/utils.php:189
 msgid "Share on Threads"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:190
+#: build/social-sharing-link/utils.php:194
 msgid "Share on Tumblr"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:195
+#: build/social-sharing-link/utils.php:199
 msgid "Share on Viber"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:200
+#: build/social-sharing-link/utils.php:204
 msgid "Share on WhatsApp"
 msgstr ""
 
-#: build/social-sharing-link/utils.php:205
+#: build/social-sharing-link/utils.php:209
 #: build/social-sharing-link/index.js:2
 msgid "Share on X"
 msgstr ""

@@ -71,7 +71,7 @@ Share options include:
 
 * Add support for Threads sharing. (props @WatermarkBranding)
 * Add dimension and border support to individual social sharing links. (props @TAjgriffin)
-* Add support for en and em dashes in post titles. (props @GeoSn0w)
+* Add support for en and em dashes, apostrophes, and ampersands in post titles. (props @GeoSn0w)
 * Add Playground blueprint for live preview in the Plugin Directory.
 
 **Changed**

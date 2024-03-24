@@ -65,7 +65,7 @@ Share options include:
 
 == Changelog ==
 
-= = 1.1.0 - 2024-03-24 =
+= 1.1.0 - 2024-03-24 =
 
 **Added**
 

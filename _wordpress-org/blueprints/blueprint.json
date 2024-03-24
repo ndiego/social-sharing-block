@@ -21,7 +21,7 @@
 			"step": "importFile",
 			"file": {
 				"resource": "url",
-				"url": "https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/export.xml"
+				"url": "https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/demo-content.xml"
 			}
 		}
 	],

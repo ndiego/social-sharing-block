@@ -24,6 +24,7 @@ import {
 	viber,
 	whatsapp,
 	x,
+	webshare,
 } from './icons';
 
 const variations = [
@@ -55,8 +56,8 @@ const variations = [
 		name: 'mail',
 		attributes: { service: 'mail' },
 		title: 'Mail',
-		label: __( 'Email this Page', 'social-sharing-block' ),
-		keywords: [ 'email', 'e-mail' ],
+		label: __('Email this Page', 'social-sharing-block'),
+		keywords: ['email', 'e-mail'],
 		icon: mail,
 	},
 	{
@@ -75,7 +76,7 @@ const variations = [
 		name: 'print',
 		attributes: { service: 'print' },
 		title: 'Print',
-		label: __( 'Print this Page', 'social-sharing-block' ),
+		label: __('Print this Page', 'social-sharing-block'),
 		icon: print,
 	},
 	{
@@ -131,14 +132,21 @@ const variations = [
 		name: 'x',
 		attributes: { service: 'x' },
 		title: 'X',
-		keywords: [ 'twitter' ],
+		keywords: ['twitter'],
 		icon: x,
+	},
+	{
+		name: 'webshare',
+		attributes: { service: 'webshare' },
+		title: 'Web share',
+		label: __('Share this page', 'social-sharing-block'),
+		icon: webshare,
 	},
 	// Deprecated now that Twitter is X.
 	{
 		name: 'twitter',
 		attributes: { service: 'twitter' },
-		title: __( 'X (formerly Twitter)' ),
+		title: __('X (formerly Twitter)'),
 		icon: x,
 		scope: [], // Removes the variation from the block inserter.
 	},
@@ -149,13 +157,13 @@ const variations = [
  * `isActive` function is used to find a variation match from a created
  * Block by providing its attributes.
  */
-variations.forEach( ( variation ) => {
-	if ( variation.isActive ) {
+variations.forEach((variation) => {
+	if (variation.isActive) {
 		return;
 	}
 
-	variation.isActive = ( blockAttributes, variationAttributes ) =>
+	variation.isActive = (blockAttributes, variationAttributes) =>
 		blockAttributes.service === variationAttributes.service;
-} );
+});
 
 export default variations;

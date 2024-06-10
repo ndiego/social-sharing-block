@@ -45,8 +45,9 @@ Share options include:
 
 === Stay Connected ===
 
-* [Follow on Twitter](https://twitter.com/nickmdiego)
 * [View on GitHub](https://github.com/ndiego/social-sharing-block)
+* [Visit plugin project page](https://nickdiego.com/projects/social-sharing-block/)
+* [Follow on Twitter](https://twitter.com/nickmdiego)
 
 == Installation ==
 

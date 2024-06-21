@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-24T15:14:02+00:00\n"
+"POT-Creation-Date: 2024-06-21T20:59:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: social-sharing-block\n"
@@ -19,7 +19,7 @@ msgid "Social Sharing Block"
 msgstr ""
 
 #. Description of the plugin
-msgid "Effortlessly add social share icons to your website."
+msgid "Easily add social share icons to your website."
 msgstr ""
 
 #. Author of the plugin

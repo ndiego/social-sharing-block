@@ -2,11 +2,11 @@
 
 ![Social Sharing](https://github.com/ndiego/social-sharing-block/blob/main/_wordpress-org/banner-1544x500.png)
 
-[![Active Installs](https://img.shields.io/wordpress/plugin/installs/social-sharing-block?logo=wordpress&logoColor=%23fff&label=Active%20Installs&labelColor=%23262626&color=%23262626)](https://wordpress.org/plugins/social-sharing-block/) [![Playground Demo Link](https://img.shields.io/wordpress/plugin/v/social-sharing-block?logo=wordpress&logoColor=%23fff&label=Playground%20Demo&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/blueprint.json)
+[![Active Installs](https://img.shields.io/wordpress/plugin/installs/social-sharing-block?logo=wordpress&logoColor=%23fff&label=Active%20Installs&labelColor=%2323282d&color=%2323282d)](https://wordpress.org/plugins/social-sharing-block/) [![Playground Demo Link](https://img.shields.io/wordpress/plugin/v/social-sharing-block?logo=wordpress&logoColor=%23fff&label=Playground%20Demo&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/ndiego/social-sharing-block/main/_playground/blueprint.json)
 
 A simple little WordPress block that allows you to add social share icons to your website. Choose from 15+ of the most popular social channels. [Download on WordPress.org](https://wordpress.org/plugins/social-sharing-block/)
 
-### Sharing Options
+### Sharing options
 
 - Facebook
 - Flipboard
@@ -26,7 +26,7 @@ A simple little WordPress block that allows you to add social share icons to you
 - Email
 - Print
 
-### Key Features
+### Key features
 
 - Heavily inspired by the Social Icons block in WordPress core
 - Includes some handy controls (show/hide labels, size, colors, etc.)

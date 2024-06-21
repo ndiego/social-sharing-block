@@ -2,13 +2,13 @@
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
 Requires at least: 6.3
-Tested up to:      6.5
+Tested up to:      6.6
 Requires PHP:      7.0
 Stable tag:        1.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Effortlessly add social share icons to your website.
+Easily add social share icons to your website.
 
 == Description ==
 
@@ -34,7 +34,7 @@ Share options include:
 * Email
 * Print
 
-=== Key Features ===
+=== Key features ===
 
 * Heavily inspired by the Social Icons block in WordPress core
 * Includes some handy controls (show/hide labels, size, colors, etc.)
@@ -43,7 +43,7 @@ Share options include:
 * Will get additional functionality as it's added to WordPress core (margin, borders, responsive controls etc.)
 * Plugin is intentionally lightweight and adds no frontend JavaScript files.
 
-=== Stay Connected ===
+=== Stay connected ===
 
 * [View on GitHub](https://github.com/ndiego/social-sharing-block)
 * [Visit plugin project page](https://nickdiego.com/projects/social-sharing-block/)
@@ -62,9 +62,15 @@ Share options include:
 
 1. Social icons default to their appropriate brand colors. Easily choose your own icon and background colors using the block controls.
 2. The Social Sharing Block includes three different styles and the ability to show/hide labels.
-3. Effortlessly configure social icons with extensive layout, orientation, and size controls to suit your needs.
+3. Easily configure social icons with extensive layout, orientation, and size controls to suit your needs.
 
 == Changelog ==
+
+= 1.2.0 - 2024-06-TBD =
+
+**Changed**
+
+* Update "Tested up to" to WordPress 6.6. 
 
 = 1.1.0 - 2024-03-24 =
 

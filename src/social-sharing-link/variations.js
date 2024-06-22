@@ -154,10 +154,10 @@ variations.forEach( ( variation ) => {
 	}
 
 	if ( ! variation.example ) {
-		variation.example = { 
+		variation.example = {
 			attributes: {
-				service: variation.name
-			}
+				service: variation.name,
+			},
 		};
 	}
 } );

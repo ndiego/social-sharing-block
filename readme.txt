@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 6.3
 Tested up to:      6.6
 Requires PHP:      7.0
-Stable tag:        1.1.0
+Stable tag:        1.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,11 +65,16 @@ Share options include:
 
 == Changelog ==
 
-= 1.2.0 - 2024-06-TBD =
+= 1.2.0 - 2024-06-22 =
+
+**Added**
+
+* Add example content for each Social Link variation.
 
 **Changed**
 
 * Update "Tested up to" to WordPress 6.6. 
+* Update the Playground blueprint for the Live Preview.
 
 = 1.1.0 - 2024-03-24 =
 

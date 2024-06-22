@@ -4,7 +4,7 @@
  * Description:       Easily add social share icons to your website.
  * Requires at least: 6.3
  * Requires PHP:      7.0
- * Version:           1.1.0
+ * Version:           1.2.0
  * Author:            Nick Diego
  * Author URI:        https://www.nickdiego.com
  * License:           GPL-2.0-or-later
@@ -13,6 +13,8 @@
  *
  * @package           Social Sharing Block
  */
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Register the Social Sharing and Social Sharing Links blocks.

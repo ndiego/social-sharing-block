@@ -52,9 +52,9 @@ function get_label( $service, $services ) {
 function get_url( $service, $services ) {
 	if ( isset( $services[ $service ] ) && isset( $services[ $service ]['url'] ) ) {
 
-		// The print service uses Javascript and should be escaped differently,
+		// The webshare and print service uses Javascript and should be escaped differently,
 		// and Viber has a strange share URL that gets stripped by esc_attr.
-		if ( 'print' === $service || 'viber' === $service ) {
+		if ( 'webshare' === $service || 'print' === $service || 'viber' === $service ) {
 			return esc_js( $services[ $service ]['url'] );
 		} else {
 			return esc_url( $services[ $service ]['url'] );
@@ -209,6 +209,11 @@ function get_link_services( $share_custom_link, $block ) {
 			'label' => __( 'Share on X', 'social-sharing-block' ),
 			'url'   => 'https://x.com/share?url=' . $permalink . $and_text_title,
 			'icon'  => '<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M13.982 10.622 20.54 3h-1.554l-5.693 6.618L8.745 3H3.5l6.876 10.007L3.5 21h1.554l6.012-6.989L15.868 21h5.245l-7.131-10.378Zm-2.128 2.474-.697-.997-5.543-7.93H8l4.474 6.4.697.996 5.815 8.318h-2.387l-4.745-6.787Z"></path></svg>',
+		),
+		'webshare'  => array(
+			'label' => __( 'Share this page', 'social-sharing-block' ),
+			'url'   => 'javascript:navigator.share({url: window.location.href, title:document.title})',
+			'icon'  => '<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M14.5 12c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3c0-.24.03-.46.09-.69l-4.38-2.3c-.55.61-1.33.99-2.21.99-1.66 0-3-1.34-3-3s1.34-3 3-3c.88 0 1.66.39 2.21.99l4.38-2.3c-.06-.23-.09-.45-.09-.69 0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3c-.88 0-1.66-.39-2.21-.99l-4.38 2.3c.06.23.09.45.09.69s-.03.46-.09.69l4.38 2.3c.55-.61 1.33-.99 2.21-.99z" /></svg>',
 		),
 	);
 

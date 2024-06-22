@@ -25,7 +25,7 @@ if ( 'twitter' === $service ) {
 
 $rel_target_attributes = '';
 
-if ( 'print' !== $service && 'mail' !== $service ) {
+if ( 'webshare' !== $service && 'print' !== $service && 'mail' !== $service ) {
 	$rel_target_attributes = 'rel="noopener nofollow" target="_blank"';
 }
 

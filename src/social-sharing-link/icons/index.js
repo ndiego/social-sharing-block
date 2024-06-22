@@ -15,3 +15,4 @@ export * from './tumblr';
 export * from './viber';
 export * from './whatsapp';
 export * from './x';
+export * from './webshare';

@@ -1,10 +1,10 @@
 === Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
-Requires at least: 6.3
-Tested up to:      6.6
-Requires PHP:      7.0
-Stable tag:        1.2.0
+Requires at least: 6.5
+Tested up to:      6.7
+Requires PHP:      7.4
+Stable tag:        1.3.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,7 @@ A simple little WordPress block that allows you to add social share icons to you
 
 Share options include:
 
+* Bluesky
 * Facebook
 * Flipboard
 * LINE
@@ -64,6 +65,19 @@ Share options include:
 3. Easily configure social icons with extensive layout, orientation, and size controls to suit your needs.
 
 == Changelog ==
+
+= 1.3.0 - 2024-11-04 =
+
+**Added**
+
+* Added support for Bluesky sharing. (props [@Fyrins](https://github.com/Fyrins))
+* Added support for content-only editing.
+
+**Changed**
+
+* Updated "Tested up to" to WordPress 6.7. 
+* Updated "Requires at least" to WordPress 6.5.
+* Updated "Minimum PHP version" to 7.4 to match WordPress core.
 
 = 1.2.0 - 2024-06-22 =
 

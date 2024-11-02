@@ -8,6 +8,7 @@ A simple little WordPress block that allows you to add social share icons to you
 
 ### Sharing options
 
+- Bluesky
 - Facebook
 - Flipboard
 - LINE
@@ -36,8 +37,8 @@ A simple little WordPress block that allows you to add social share icons to you
 
 ## Requirements
 
-- WordPress 6.3+
-- PHP 7.0+
+- WordPress 6.5+
+- PHP 7.4+
 
 ## Development
 

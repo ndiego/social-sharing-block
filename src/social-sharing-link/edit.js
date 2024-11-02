@@ -103,7 +103,7 @@ const SocialSharingLinkEdit = ( { attributes, context, setAttributes } ) => {
 								className="wp-block-social-sharing-link__toolbar_content_text"
 								label={ __( 'Label', 'social-sharing-block' ) }
 								help={ __(
-									'Customize a share label or use the default.',
+									'Customize the share label or use the default.',
 									'social-sharing-block'
 								) }
 								value={ label }

@@ -7,6 +7,7 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import {
+	bluesky,
 	facebook,
 	flipboard,
 	line,
@@ -27,6 +28,12 @@ import {
 } from './icons';
 
 const variations = [
+	{
+		name: 'bluesky',
+		attributes: { service: 'bluesky' },
+		title: 'Bluesky',
+		icon: bluesky,
+	},
 	{
 		name: 'facebook',
 		attributes: { service: 'facebook' },

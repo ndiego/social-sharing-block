@@ -5,12 +5,15 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const { escapeRegExp } = require( 'lodash' );
 const { join, sep } = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const RtlCssPlugin  = require( 'rtlcss-webpack-plugin' );
 
 module.exports = {
 	...defaultConfig,
 
 	plugins: [
-		...defaultConfig.plugins,
+		...defaultConfig.plugins.filter(
+			( filter ) => ! ( filter instanceof RtlCssPlugin )
+		),
 
 		// Copy utility files to build.
 		new CopyWebpackPlugin( {

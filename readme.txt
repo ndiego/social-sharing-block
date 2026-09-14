@@ -4,7 +4,7 @@ Tags:              social, share, social icon, social share, block
 Requires at least: 6.6
 Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        1.3.0
+Stable tag:        1.4.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,18 @@ Share options include:
 3. Easily configure social icons with extensive layout, orientation, and size controls to suit your needs.
 
 == Changelog ==
+
+= 1.4.0 - 2026-09-14 =
+
+**Changed**
+
+* Updated "Tested up to" to WordPress 7.1. 
+* Updated "Requires at least" to WordPress 6.6.
+* Updated all npm and Composer dependencies, including @wordpress/scripts 35, and rebuilt the plugin with the current build tooling.
+
+**Fixed**
+
+* Fixed all stylelint issues in the SCSS source and resolved Sass @import deprecation warnings. No visual changes.
 
 = 1.3.0 - 2024-11-04 =
 

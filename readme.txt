@@ -1,8 +1,8 @@
 === Social Sharing Block ===
 Contributors:      ndiego, outermostdesign
 Tags:              social, share, social icon, social share, block
-Requires at least: 6.5
-Tested up to:      6.9
+Requires at least: 6.6
+Tested up to:      7.1
 Requires PHP:      7.4
 Stable tag:        1.3.0
 License:           GPL-2.0-or-later

@@ -37,7 +37,7 @@ A simple little WordPress block that allows you to add social share icons to you
 
 ## Requirements
 
-- WordPress 6.5+
+- WordPress 6.6+
 - PHP 7.4+
 
 ## Development

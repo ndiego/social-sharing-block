@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 const { escapeRegExp } = require( 'lodash' );
 const { join, sep } = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
-const RtlCssPlugin  = require( 'rtlcss-webpack-plugin' );
+const RtlCssPlugin = require( '@wordpress/scripts/plugins/rtlcss-webpack-plugin' );
 
 module.exports = {
 	...defaultConfig,
@@ -19,7 +19,7 @@ module.exports = {
 		new CopyWebpackPlugin( {
 			patterns: [].concat(
 				Object.entries( {
-					'src': '',
+					src: '',
 				} ).flatMap( ( [ from, to ] ) => [
 					{
 						from: `${ from }/**/utils.php`,

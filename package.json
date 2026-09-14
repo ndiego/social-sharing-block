@@ -17,23 +17,33 @@
 		"update-pot": "wp i18n make-pot . languages/social-sharing-block.pot --exclude=src"
 	},
 	"dependencies": {
-		"@wordpress/block-editor": "^14.6.0",
-		"@wordpress/blocks": "^14.0.0",
-		"@wordpress/components": "^28.11.0",
-		"@wordpress/compose": "^7.11.0",
-		"@wordpress/element": "^6.11.0",
-		"@wordpress/i18n": "^5.11.0",
-		"@wordpress/icons": "^10.11.0",
-		"@wordpress/keycodes": "^4.11.0",
-		"@wordpress/primitives": "^4.11.0",
-		"classnames": "^2.3.2",
-		"html-react-parser": "^5.1.18"
+		"@wordpress/block-editor": "^17.1.0",
+		"@wordpress/blocks": "^16.0.0",
+		"@wordpress/components": "^40.1.0",
+		"@wordpress/compose": "^8.8.0",
+		"@wordpress/data": "^10.55.0",
+		"@wordpress/element": "^8.7.0",
+		"@wordpress/i18n": "^6.28.0",
+		"@wordpress/icons": "^16.0.0",
+		"@wordpress/keycodes": "^4.55.0",
+		"@wordpress/primitives": "^4.55.0",
+		"@wordpress/url": "^4.55.0",
+		"classnames": "^2.5.1",
+		"html-react-parser": "^6.1.7"
 	},
 	"devDependencies": {
-		"@wordpress/prettier-config": "^4.13.0",
-		"@wordpress/scripts": "^30.4.0",
-		"copy-webpack-plugin": "^10.2.4",
-		"lodash": "^4.17.21"
+		"@wordpress/prettier-config": "^4.55.0",
+		"@wordpress/scripts": "^35.0.0",
+		"copy-webpack-plugin": "^14.0.0",
+		"lodash": "^4.18.1",
+		"prettier": "npm:wp-prettier@^3.9.6"
 	},
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"overrides": {
+		"copy-webpack-plugin": "$copy-webpack-plugin",
+		"markdownlint-cli": "^0.49.1",
+		"sockjs": {
+			"uuid": "^11.1.1"
+		}
+	}
 }

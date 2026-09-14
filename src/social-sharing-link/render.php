@@ -10,7 +10,7 @@ namespace SocialSharingLink;
 defined( 'ABSPATH' ) || exit;
 
 // Include utility functions.
-require_once dirname( __FILE__ ) . '/utils.php';
+require_once __DIR__ . '/utils.php';
 
 $share_custom_link = array_key_exists( 'shareCustomLink', $block->context ) ? $block->context['shareCustomLink'] : false;
 $service           = ( isset( $attributes['service'] ) ) ? $attributes['service'] : 'mail';

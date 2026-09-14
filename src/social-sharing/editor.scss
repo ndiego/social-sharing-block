@@ -1,10 +1,12 @@
 // Editor specific styles for Social Sharing.
 .editor-styles-wrapper {
+
 	.wp-block-outermost-social-sharing {
 		padding: 0;
 
 		// Unset background colors that can be inherited from Global Styles.
-		// This is a duplicate of a rule in style.scss, as it needs higher specificity in the editor.
+		// This is a duplicate of a rule in style.scss, as it needs higher
+		// specificity in the editor.
 		// The rule can be removed if editor styles get lowered in specificity.
 		background: none;
 	}
@@ -41,8 +43,8 @@
 		padding: 0.25em;
 
 		.is-style-pill-shape & {
-			padding-left: calc((2/3) * 1em);
-			padding-right: calc((2/3) * 1em);
+			padding-left: calc((2 / 3) * 1em);
+			padding-right: calc((2 / 3) * 1em);
 		}
 
 		.is-style-logos-only & {
@@ -57,23 +59,23 @@
 		height: 1em;
 
 		.is-style-logos-only & {
-			background: currentColor;
+			background: currentcolor;
 		}
 	}
 }
 
 // Selected placeholder state.
 .wp-block-outermost-social-sharing .wp-block-outermost-social-sharing__social-prompt {
-    cursor: default;
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
-    font-size: 13px;
-    line-height: 24px;
-    list-style: none;
+	cursor: default;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	line-height: 24px;
+	list-style: none;
 	margin-top: auto;
 	margin-bottom: auto;
-    min-height: 24px;
-    order: 2;
-    padding-right: 8px;
+	min-height: 24px;
+	order: 2;
+	padding-right: 8px;
 }
 
 // Center flex items. This has an equivalent in style.scss.

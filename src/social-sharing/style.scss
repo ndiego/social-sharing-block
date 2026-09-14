@@ -1,3 +1,6 @@
+@use "../social-sharing-link/socials-with-bg" as *;
+@use "../social-sharing-link/socials-without-bg" as *;
+
 .wp-block-outermost-social-sharing {
 	// Required for when social share icons are oriented vertically.
 	align-items: flex-start;
@@ -11,7 +14,8 @@
 	// Unset background colors that can be inherited from Global Styles.
 	background: none;
 
-	// Some themes add underlines, false underlines (via shadows), and borders to <a>.
+	// Some themes add underlines, false underlines (via shadows), and
+	// borders to <a>.
 	.outermost-social-sharing-link a,
 	.outermost-social-sharing-link a:hover {
 		text-decoration: none;
@@ -20,7 +24,8 @@
 	}
 
 	.outermost-social-sharing-link {
-		// By setting the font size, we can scale icons and paddings consistently based on that.
+		// By setting the font size, we can scale icons and paddings
+		// consistently based on that.
 		// This also allows themes to override this, if need be.
 		a {
 			padding: 0.25em;
@@ -33,8 +38,8 @@
 
 		span:not(.screen-reader-text) {
 			margin-left: 0.5em;
-		    margin-right: 0.5em;
-		    font-size: 0.65em;
+			margin-right: 0.5em;
+			font-size: 0.65em;
 		}
 	}
 
@@ -61,12 +66,14 @@
 	}
 
 	// Center flex items. This has an equivalent in editor.scss.
-	// It also needs to override some of the default classes usually applied to the centering class.
+	// It also needs to override some of the default classes usually applied
+	// to the centering class.
 	// align left must not be set, because this is the default (flex-start).
 	&.aligncenter {
 		justify-content: center;
 		display: flex;
 	}
+
 	&.alignright {
 		justify-content: flex-end;
 	}
@@ -92,26 +99,29 @@
 	}
 }
 
-// This needs specificity because themes usually override it with things like .widget-area a.
+// This needs specificity because themes usually override it with things
+// like .widget-area a.
 .wp-block-outermost-social-sharing .wp-block-outermost-social-sharing-link .wp-block-outermost-social-sharing-link-anchor {
+
 	&,
 	&:hover,
 	&:active,
 	&:visited,
 	svg {
-		color: currentColor;
-		fill: currentColor;
+		color: currentcolor;
+		fill: currentcolor;
 	}
 }
 
 // Provide colors for a range of icons.
 .wp-block-outermost-social-sharing:not(.is-style-logos-only) {
 	// Generic items such as mail, feed, etc.
-	@import "../social-sharing-link/socials-with-bg.scss";
+	@include socials-with-bg;
 }
 
 // Treatment for logos only style.
 .wp-block-outermost-social-sharing.is-style-logos-only {
+
 	.outermost-social-sharing-link {
 		background: none;
 
@@ -126,24 +136,27 @@
 		}
 	}
 
-	@import "../social-sharing-link/socials-without-bg.scss";
+	@include socials-without-bg;
 }
 
 // Treatment for pill shape style.
 .wp-block-outermost-social-sharing.is-style-pill-shape {
+
 	.outermost-social-sharing-link {
 		width: auto;
 	}
 
 	.outermost-social-sharing-link a {
-		padding-left: calc((2/3) * 1em);
-		padding-right: calc((2/3) * 1em);
+		padding-left: calc((2 / 3) * 1em);
+		padding-right: calc((2 / 3) * 1em);
 	}
 }
 
 // Temporary fix for post template link styling.
 .wp-block-post-template.is-flex-container {
+
 	.wp-block-outermost-social-sharing {
+
 		li {
 			width: auto;
 		}
